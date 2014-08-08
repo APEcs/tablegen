@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- Format information:
+
+General structure
+=================
+
+<years>              - container for year definitions
+    <year>           - year definition
+        <semester>   - a semester definition
+            <break/> - a break in the semester
+        </semester>
+    </year>
+</years>
+
+IMPORTANT: All date values must be specified as ISO8601 extended calendar
+date values, ie: YYYY-MM-DD
+
+<year> elements
+===============
+
+Must have one attribute:
+
+Name   Type    Description
+id     string  The ID of the academic year. Recommended format is AY<y1><y2>.
+
+Must contain one or more <semester> elements.
+
+<semester> elements
+===================
+
+Must have three attributes:
+
+Name   Type    Description
+id     string  An ID for the semester (ie: the semester number, 1 or 2)
+start  date    The Monday the semester starts on.
+end    date    The last day of the semester (Sunday for S1, Friday for S2)
+
+start and end values can generally be used 'as is' from the published
+"Key Dates" information.
+
+May contain one or more <break> elements.
+
+<break> elements
+================
+
+Must have three attributes:
+
+Name   Type    Description
+id     string  An ID for the break (eg: 'xmas' or 'easter')
+start  date    The Friday the break starts on
+end    date    The Monday the break ends on.
+
+NOTE: the "Key Dates" shows breaks starting on Friday and ending
+on Monday, so it can be used 'as is' here. However, this is a really
+bizarre way of doing it, and if they ever fix this odd state of
+affairs so that the break starts on the Saturday and ends on the
+Sunday, the loader code will need to undo the changes it makes.
+
+-->
+<years>
+    <year id="AY1314">
+        <semester id="1" start="2013-09-16" end="2014-01-26">
+            <break id="xmas" start="2013-12-13" end="2014-01-13" />
+        </semester>
+        <semester id="2" start="2014-01-27" end="2014-05-06">
+            <break id="easter" start="2014-04-04" end="2014-04-28" />
+        </semester>
+    </year>
+
+    <year id="AY1415">
+        <semester id="1" start="2014-09-15" end="2015-01-25">
+            <break id="xmas" start="2014-12-12" end="2015-01-12" />
+        </semester>
+        <semester id="2" start="2015-01-26" end="2015-05-05">
+            <break id="easter" start="2015-03-20" end="2015-04-13" />
+        </semester>
+    </year>
+
+    <year id="AY1516">
+        <semester id="1" start="2015-09-21" end="2016-01-31">
+            <break id="xmas" start="2015-12-18" end="2016-01-18" />
+        </semester>
+        <semester id="2" start="2016-02-01" end="2016-05-10">
+            <break id="easter" start="2016-03-18" end="2016-04-11" />
+        </semester>
+    </year>
+</years>
