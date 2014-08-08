@@ -1,0 +1,3 @@
+[submodule "webperl"]
+	path = webperl
+	url = https://github.com/TheWatcher/webperl.git
