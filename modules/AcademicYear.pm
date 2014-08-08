@@ -22,7 +22,9 @@ package AcademicYear;
 
 use v5.12;
 use base qw(Webperl::SystemModule);
+use Webperl::Utils qw(hash_or_hashref);
 use DateTime;
+use Data::Dumper;
 use XML::Simple;
 
 # ============================================================================
@@ -74,15 +76,82 @@ sub load_yearfile {
     return $self -> self_error("No year file specified")
         if(!$filename);
 
-    my $yeardata = eval { XMLin($filename, KeepRoot => 0, ForceArray => [ 'break' ]) };
+    my $yeardata = eval { XMLin($filename, KeepRoot => 0, ForceArray => [ 'break' ], KeyAttr => [ 'id' ]) };
     return $self -> self_error("Year file loading failed: $@")
         if($@);
+
+    print "Data: ".Dumper($yeardata)."\n";
 
     $self -> {"yeardata"} = $yeardata;
     $self -> {"yearfile"} = $filename;
 
     # Now fix up all the dates
     return $self -> _convert_yeardata_dates();
+}
+
+
+
+## @method $ weeks(%args)
+# Fetch the list of weeks for the specified semester in a year
+#
+# @param arg A hash, or reference to a hash, of argument to control the behaviour
+#            of the function.
+# @return A reference to an array of week hashes on success, undef on error.
+sub weeks {
+    my $self = shift;
+    my $args = hash_or_hashref(@_);
+
+    $self -> clear_error();
+
+    # Year must be specified and valid
+    return $self -> self_error("No academic year selected")
+        if(!$args -> {"year"});
+
+    my $yeardata = $self -> {"yeardata"} -> {"year"} -> {$args -> {"year"}}
+        or return $self -> self_error("Unknown academic year ".$args -> {"year"}." selected");
+
+    # As must the semester
+    return $self -> self_error("No semester selected")
+        if(!$args -> {"semester"});
+
+    my $semdata = $yeardata -> {"semester"} -> {$args -> {"semester"}}
+        or return $self -> self_error("Unknown semester ".$args -> {"semester"}." selected");
+
+    # Start off at the beginning of the semester
+    my $currdate = $semdata -> {"start"} -> clone();
+
+    my @days = ();
+    my $week = 0;
+    while($currdate < $semdata -> {"end"}) {
+        my $break = $self -> _in_break($currdate, $semdata);
+
+        # Not in a break, treat each week individually
+        if(!$break) {
+            if($args -> {"initial_welcome"} && $currdate == $semdata -> {"start"}) {
+                push(@days, {"id"   => $week, # Welcome week gets week number 0
+                             "name" => "Welcome Week",
+                             "date" => $currdate -> clone()});
+            } else {
+                push(@days, {"id"   => ++$week,
+                             "name" => "Week $week",
+                             "date" => $currdate -> clone()});
+            }
+            $currdate -> add(weeks => 1);
+
+        # Breaks just report the break, including start/end.
+        } else {
+            push(@days, {"id"    => $break -> {"id"},
+                         "break" => $break,
+                         "name"  => $break -> {"name"}});
+
+            # skip straight to the end
+            $currdate = $break -> {"end"} -> clone();
+
+            $currdate -> add(days => 1) if($self -> {"fix_breaks"});
+        }
+    }
+
+    return \@days;
 }
 
 
@@ -120,6 +189,9 @@ sub _convert_yeardata_dates {
                     or return undef;
                 $breakref -> {"end"}   = $self -> _convert_date($breakref -> {"end"}, 1)
                     or return undef;
+
+                # Store the break id for ease of access later
+                $breakref -> {"id"} = $break;
 
                 # Fix up start and end if needed
                 if($self -> {"fix_breaks"}) {
@@ -169,5 +241,31 @@ sub _convert_date {
 
     return $datetime;
 }
+
+
+## @method private $ _in_break($date, $semester)
+# Determine whether the specified date fails within a break in the
+# specified semester, and return the break data if it does.
+#
+# @param date     The date to check.
+# @param semester A reference to the semester information
+# @return A reference to the break hash if the date is in a break,
+#         undef otherwise.
+sub _in_break {
+    my $self     = shift;
+    my $date     = shift;
+    my $semester = shift;
+
+    foreach my $break (keys(%{$semester -> {"break"}})) {
+        my $breakdata = $semester -> {"break"} -> {$break};
+
+        # If the data is inside the break date range, return the break
+        return $breakdata
+            if($date >= $breakdata -> {"start"} && $date <= $breakdata -> {"end"});
+    }
+
+    return undef;
+}
+
 
 1;
