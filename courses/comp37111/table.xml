@@ -11,6 +11,9 @@
    table.schedule td {
      background-color: #eeeeee;
    }
+   table.schedule td.important {
+     background-color: #ff0000;
+   }
    table.schedule tr.reading td {
      background-color: pink;
    }
@@ -31,16 +34,16 @@
         <row semester="1" week="1">
             <column for="week">{T_[weeknum]}</column>
             <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect"><![CDATA[<a href="">Introduction</a>]]></column>
+            <column for="lect"><![CDATA[<a href="{F_[1-introduction-hos.pdf]}">Introduction</a>]]></column>
             <column for="who">TLJH</column>
-            <column for="read"><![CDATA[<a href="">The lab script<a/> (PDF). See below for details.]]></column>
+            <column for="read"><![CDATA[<a href="{F_[COMP37111-lab-2013.pdf]}">The lab script<a/> (PDF). See below for details.]]></column>
 	        <column for="lab">Lab groups: Pixels, Texels and and Voxels (to be announced)</column>
         </row>
 
         <row semester="1" week="2">
             <column for="week">{T_[weeknum]}</column>
             <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect"><![CDATA[<a href="">Procedural modelling]]></column>
+            <column for="lect"><![CDATA[<a href="{F_[2-procedural-hos.pdf]}">Procedural modelling]]></column>
             <column for="who">TLJH</column>
             <column for="read"><![CDATA[
                 <p>Kolb, A., L. Latta, and C. Rezk-Salama (2004). “Hardware-based simulation and collision detection for large particle systems”. In: Proceedings of the ACM SIGGRAPH/EUROGRAPHICS conference on Graphics hardware. HWWS ’04. Grenoble, France: ACM, pp. 123–131. ISBN: 3-905673-15-0. DOI: 10.1145/1058129.1058147.</p>
@@ -53,12 +56,12 @@
         <row semester="1" week="3">
             <column for="week">{T_[weeknum]}</column>
             <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect"><![CDATA[<a href="">Model Acquisition-1]]></column>
+            <column for="lect"><![CDATA[<a href="{F_[3-Model-Acquisition-1-hos.pdf]}">Model Acquisition-1]]></column>
             <column for="who">TLJH</column>
             <column for="read"><![CDATA[
                 <p>Greg Turk and Marc Levoy (1994), "Zippered Polygon Meshes from Range Images". in: Proceedings SIGGRAPH Computer Graphics, pp. 311-318. ISBN: 0-89791-667-0. DOI: 10.1145/192161.192241.</p>
                 <hr />
-                <p>FOR YOU TO DO: Use Google Sketchup to look at the Kilburn Building model.</p>
+                <p>FOR YOU TO DO: Use <a href="http://www.sketchup.com/">Google Sketchup</a> to look at the <a href="{F_[kilburn1.skp]}">Kilburn Building model</a>.</p>
             ]]></column>
 	        <column for="lab">Lab clinic #1: {T_[weekdaymon + 3]}, 1100-1200, Room 1.8.</column>
         </row>
@@ -66,28 +69,28 @@
         <row semester="1" week="4">
             <column for="week">{T_[weeknum]}</column>
             <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect"><![CDATA[<a href="">Model Acquisition-2]]></column>
+            <column for="lect"><![CDATA[<a href="{F_[4-model-acquisition-2-hos.pdf]}">Model Acquisition-2]]></column>
             <column for="who">TLJH</column>
             <column for="read"><![CDATA[
                 <p>James Davis et al (2002), "Filling holes in complex surfaces using volumetric diffusion". First International Symposium on 3D Data Processing, Visualization, and Transmission Padua, Italy, June 19-21, 2002</p>
                 <hr />
-                <p>FOR YOU TO DO: Download Meshlab and do some experiments with mesh simplification. And try using Scanview.</p>
+                <p>FOR YOU TO DO: Download <a href="http://meshlab.sourceforge.net/">Meshlab</a> and do some experiments with mesh simplification. And try using <a href="http://graphics.stanford.edu/software/scanview">Scanview</a>.</p>
             ]]></column>
         </row>
 
         <row semester="1" week="5">
             <column for="week">{T_[weeknum]}</column>
             <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect"><![CDATA[<a href="">Model Acquisition-3]]></column>
+            <column for="lect"><![CDATA[<a href="{F_[5-geometry-from-images-hos.pdf]}">Model Acquisition-3]]></column>
             <column for="who">TLJH</column>
             <column for="read"><![CDATA[
                 <p>Simon Gibson and Toby Howard. "Interactive reconstruction of virtual environments from photographs, with application to scene-of-crime analysis". In: Proceedings VRST '00 ACM symposium on Virtual reality software and technology, pp. 41-48. ISBN: 1-58113-316-2 DOI: 10.1145/502390.502399.</p>
                 <hr />
-                <p>FOR YOU TO DO: Download and try some experiments with Autodesk's 123D Catch.</p>
+                <p>FOR YOU TO DO: Download and try some experiments with Autodesk's <a href="http://www.123dapp.com/catch">123D Catch</a>.</p>
             ]]></column>
         </row>
 
-        <row semester="1" week="6">
+        <row semester="1" week="6" class="reading">
             <column for="week">{T_[weeknum]}</column>
             <column for="date">{T_[weekdate + 1]}</column>
             <column for="lect">Reading week</column>
@@ -144,7 +147,7 @@
             <column for="read"><![CDATA[
                 <p>Luebke, David and Chris Georges (1995). “Portals and mirrors: simple, fast evaluation of potentially visible sets”. In: Proceedings of the 1995 sym- posium on Interactive 3D graphics. I3D ’95. Monterey, California, United States: ACM, 105–ff. ISBN: 0-89791-736-7. DOI: 10.1145/199404. 199422.</p>
             ]]></column>
-	        <column for="lab">Lab submit deadline: 5pm {T_[weekdaymon + 4]}.</column>
+	        <column for="lab" class="important">Lab submit deadline: 5pm {T_[weekdaymon + 4]}.</column>
         </row>
 
         <row semester="1" week="12">
