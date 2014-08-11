@@ -22,140 +22,140 @@
      color: white;
    }
     </style>
-    <table class="schedule">
+    <columns class="schedule">
         <column id="week" title="Wk" />
         <column id="date" title="Date" />
         <column id="lect" title="Lecture topic and slides" />
         <column id="who"  title="Who" />
         <column id="read" title="Reading (examinable material)" />
         <column id="lab"  title="Lab" />
-    </table>
+    </columns>
     <rows>
         <row semester="1" week="1">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect"><![CDATA[<a href="{F_[1-introduction-hos.pdf]}">Introduction</a>]]></column>
-            <column for="who">TLJH</column>
-            <column for="read"><![CDATA[<a href="{F_[COMP37111-lab-2013.pdf]}">The lab script<a/> (PDF). See below for details.]]></column>
-	        <column for="lab">Lab groups: Pixels, Texels and and Voxels (to be announced)</column>
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect"><![CDATA[<a href="{L_[1-introduction-hos.pdf]}">Introduction</a>]]></data>
+            <data for="who">TLJH</data>
+            <data for="read"><![CDATA[<a href="{L_[COMP37111-lab-2013.pdf]}">The lab script<a/> (PDF). See below for details.]]></data>
+	        <data for="lab">Lab groups: Pixels, Texels and and Voxels (to be announced)</data>
         </row>
 
         <row semester="1" week="2">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect"><![CDATA[<a href="{F_[2-procedural-hos.pdf]}">Procedural modelling]]></column>
-            <column for="who">TLJH</column>
-            <column for="read"><![CDATA[
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect"><![CDATA[<a href="{L_[2-procedural-hos.pdf]}">Procedural modelling]]></data>
+            <data for="who">TLJH</data>
+            <data for="read"><![CDATA[
                 <p>Kolb, A., L. Latta, and C. Rezk-Salama (2004). “Hardware-based simulation and collision detection for large particle systems”. In: Proceedings of the ACM SIGGRAPH/EUROGRAPHICS conference on Graphics hardware. HWWS ’04. Grenoble, France: ACM, pp. 123–131. ISBN: 3-905673-15-0. DOI: 10.1145/1058129.1058147.</p>
                 <p>Reeves, William T. and Ricki Blau (July 1985). “Approximate and probabilistic algorithms for shading and rendering structured particle systems”. In: SIGGRAPH Comput. Graph. 19.3, pp. 313–322. ISSN: 0097-8930. DOI: 10.1145/325165.325250.</p>
                 <p>Reeves, W. T. (Apr. 1983). “Particle Systems – a Technique for Modeling a Class of Fuzzy Objects”. In: ACM Trans. Graph. 2.2, pp. 91–108. ISSN: 0730-0301. DOI: 10.1145/357318.357320.</p>
-            ]]></column>
-	        <column for="lab">Lab begins</column>
+            ]]></data>
+	        <data for="lab">Lab begins</data>
         </row>
 
         <row semester="1" week="3">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect"><![CDATA[<a href="{F_[3-Model-Acquisition-1-hos.pdf]}">Model Acquisition-1]]></column>
-            <column for="who">TLJH</column>
-            <column for="read"><![CDATA[
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect"><![CDATA[<a href="{L_[3-Model-Acquisition-1-hos.pdf]}">Model Acquisition-1]]></data>
+            <data for="who">TLJH</data>
+            <data for="read"><![CDATA[
                 <p>Greg Turk and Marc Levoy (1994), "Zippered Polygon Meshes from Range Images". in: Proceedings SIGGRAPH Computer Graphics, pp. 311-318. ISBN: 0-89791-667-0. DOI: 10.1145/192161.192241.</p>
                 <hr />
-                <p>FOR YOU TO DO: Use <a href="http://www.sketchup.com/">Google Sketchup</a> to look at the <a href="{F_[kilburn1.skp]}">Kilburn Building model</a>.</p>
-            ]]></column>
-	        <column for="lab">Lab clinic #1: {T_[weekdaymon + 3]}, 1100-1200, Room 1.8.</column>
+                <p>FOR YOU TO DO: Use <a href="http://www.sketchup.com/">Google Sketchup</a> to look at the <a href="{L_[kilburn1.skp]}">Kilburn Building model</a>.</p>
+            ]]></data>
+	        <data for="lab">Lab clinic #1: {T_[weekdaymon + 3]}, 1100-1200, Room 1.8.</data>
         </row>
 
         <row semester="1" week="4">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect"><![CDATA[<a href="{F_[4-model-acquisition-2-hos.pdf]}">Model Acquisition-2]]></column>
-            <column for="who">TLJH</column>
-            <column for="read"><![CDATA[
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect"><![CDATA[<a href="{L_[4-model-acquisition-2-hos.pdf]}">Model Acquisition-2]]></data>
+            <data for="who">TLJH</data>
+            <data for="read"><![CDATA[
                 <p>James Davis et al (2002), "Filling holes in complex surfaces using volumetric diffusion". First International Symposium on 3D Data Processing, Visualization, and Transmission Padua, Italy, June 19-21, 2002</p>
                 <hr />
                 <p>FOR YOU TO DO: Download <a href="http://meshlab.sourceforge.net/">Meshlab</a> and do some experiments with mesh simplification. And try using <a href="http://graphics.stanford.edu/software/scanview">Scanview</a>.</p>
-            ]]></column>
+            ]]></data>
         </row>
 
         <row semester="1" week="5">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect"><![CDATA[<a href="{F_[5-geometry-from-images-hos.pdf]}">Model Acquisition-3]]></column>
-            <column for="who">TLJH</column>
-            <column for="read"><![CDATA[
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect"><![CDATA[<a href="{L_[5-geometry-from-images-hos.pdf]}">Model Acquisition-3]]></data>
+            <data for="who">TLJH</data>
+            <data for="read"><![CDATA[
                 <p>Simon Gibson and Toby Howard. "Interactive reconstruction of virtual environments from photographs, with application to scene-of-crime analysis". In: Proceedings VRST '00 ACM symposium on Virtual reality software and technology, pp. 41-48. ISBN: 1-58113-316-2 DOI: 10.1145/502390.502399.</p>
                 <hr />
                 <p>FOR YOU TO DO: Download and try some experiments with Autodesk's <a href="http://www.123dapp.com/catch">123D Catch</a>.</p>
-            ]]></column>
+            ]]></data>
         </row>
 
         <row semester="1" week="6" class="reading">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect">Reading week</column>
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect">Reading week</data>
         </row>
 
         <row semester="1" week="7">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect">The Rendering Equation and Raytracing</column>
-            <column for="who">SRP</column>
-            <column for="read"><![CDATA[
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect">The Rendering Equation and Raytracing</data>
+            <data for="who">SRP</data>
+            <data for="read"><![CDATA[
                 <p>Kajiya, James T. (Aug. 1986). “The rendering equation”. In: SIGGRAPH Comput. Graph. 20.4, pp. 143–150. ISSN: 0097-8930. DOI: 10.1145/15886. 15902.</p>
                 <p>Whitted, Turner (Aug. 1979). “An improved illumination model for shaded display”. In: SIGGRAPH Comput. Graph. 13.2, pp. 14–. ISSN: 0097-8930. DOI: 10.1145/965103.807419.</p>
-            ]]></column>
+            ]]></data>
         </row>
 
         <row semester="1" week="8">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect">Radiosity</column>
-            <column for="who">SRP</column>
-            <column for="read"><![CDATA[
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect">Radiosity</data>
+            <data for="who">SRP</data>
+            <data for="read"><![CDATA[
                 <p>Goral, Cindy M. et al. (Jan. 1984). “Modeling the interaction of light between diffuse surfaces”. In: SIGGRAPH Comput. Graph. 18.3, pp. 213– 222. ISSN: 0097-8930. DOI: 10.1145/964965.808601.</p>
-            ]]></column>
-	        <column for="lab">Lab clinic #2: {T_[weekdaymon + 3]}, 1100-1200, Room 1.8.</column>
+            ]]></data>
+	        <data for="lab">Lab clinic #2: {T_[weekdaymon + 3]}, 1100-1200, Room 1.8.</data>
         </row>
 
         <row semester="1" week="9">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect">Volume Rendering</column>
-            <column for="who">SRP</column>
-            <column for="read"><![CDATA[
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect">Volume Rendering</data>
+            <data for="who">SRP</data>
+            <data for="read"><![CDATA[
                 <p>Levoy, M. (May 1988). “Display of surfaces from volume data”. In: Computer Graphics and Applications, IEEE 8.3, pp. 29 –37. ISSN: 0272-1716. DOI: 10.1109/38.511</p>
-            ]]></column>
+            ]]></data>
         </row>
 
         <row semester="1" week="10">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect">Spatial Enumeration</column>
-            <column for="who">SRP</column>
-            <column for="read"><![CDATA[
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect">Spatial Enumeration</data>
+            <data for="who">SRP</data>
+            <data for="read"><![CDATA[
                 <p>Hibbard, William and David Santek (1989). “Interactivity is the key”. In: Proceedings of the 1989 Chapel Hill workshop on Volume visualization. VVS ’89. Chapel Hill, North Carolina, United States: ACM, pp. 39–43. DOI: 10.1145/329129.329356.</p>
-            ]]></column>
-	        <column for="lab">Lab clinic #3: {T_[weekdaymon + 3]}, 1100-1200, Room 1.8.</column>
+            ]]></data>
+	        <data for="lab">Lab clinic #3: {T_[weekdaymon + 3]}, 1100-1200, Room 1.8.</data>
         </row>
 
         <row semester="1" week="11">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect">Culling</column>
-            <column for="who">SRP</column>
-            <column for="read"><![CDATA[
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect">Culling</data>
+            <data for="who">SRP</data>
+            <data for="read"><![CDATA[
                 <p>Luebke, David and Chris Georges (1995). “Portals and mirrors: simple, fast evaluation of potentially visible sets”. In: Proceedings of the 1995 sym- posium on Interactive 3D graphics. I3D ’95. Monterey, California, United States: ACM, 105–ff. ISBN: 0-89791-736-7. DOI: 10.1145/199404. 199422.</p>
-            ]]></column>
-	        <column for="lab" class="important">Lab submit deadline: 5pm {T_[weekdaymon + 4]}.</column>
+            ]]></data>
+	        <data for="lab" class="important">Lab submit deadline: 5pm {T_[weekdaymon + 4]}.</data>
         </row>
 
         <row semester="1" week="12">
-            <column for="week">{T_[weeknum]}</column>
-            <column for="date">{T_[weekdate + 1]}</column>
-            <column for="lect">Revision session</column>
-            <column for="who">SRP</column>
-	        <column for="lab">Lab marking sessions: {T_[weekday]}, {T_[weekday + 2]}, and {T_[weekday + 3]}, to this timetable.</column>
+            <data for="week">{T_[weeknum]}</data>
+            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="lect">Revision session</data>
+            <data for="who">SRP</data>
+	        <data for="lab">Lab marking sessions: {T_[weekday]}, {T_[weekday + 2]}, and {T_[weekday + 3]}, to this timetable.</data>
         </row>
     </rows>
 </course>
