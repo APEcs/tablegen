@@ -24,7 +24,6 @@ use v5.12;
 use base qw(Webperl::SystemModule);
 use Webperl::Utils qw(hash_or_hashref);
 use DateTime;
-use Data::Dumper;
 use XML::Simple;
 
 # ============================================================================
@@ -80,15 +79,12 @@ sub load_yearfile {
     return $self -> self_error("Year file loading failed: $@")
         if($@);
 
-    print "Data: ".Dumper($yeardata)."\n";
-
     $self -> {"yeardata"} = $yeardata;
     $self -> {"yearfile"} = $filename;
 
     # Now fix up all the dates
     return $self -> _convert_yeardata_dates();
 }
-
 
 
 ## @method $ weeks(%args)
@@ -156,8 +152,7 @@ sub weeks {
 
 
 # ============================================================================
-#  Internal implementation stuff
-
+#  Internal implementation
 
 ## @method private $ _convert_yeardata_dates(void)
 # Convert the date fields in the yeardata to DateTime objects if they are not
