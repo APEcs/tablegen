@@ -51,7 +51,8 @@ sub new {
     return Webperl::SystemModule::set_error("No Template object available.") if(!$self -> {"template"});
     return Webperl::SystemModule::set_error("No AcademicYear object available.") if(!$self -> {"acyear"});
 
-    $self -> load_course()
+    # If a course has been set, tryo to load it
+    $self -> load_course() or return Webperl::SystemModule::set_error($self -> errstr())
         if($self -> {"course"});
 
     return $self;
@@ -68,13 +69,14 @@ sub new {
 # @return true on success, undef on error.
 sub load_course {
     my $self   = shift;
-    my $course = shift || $self -> {"course"};
+    my $course = shift || $self -> {"course"}; # default to the initial course if not set
 
     $self -> clear_error();
 
     return $self -> self_error("No course specified")
         if(!$course);
 
+    # Read the table and link definitions into a hash
     my $definitions = { };
     $definitions -> {"table"} = $self -> _load_table_data($course)
         or return undef;
@@ -82,7 +84,8 @@ sub load_course {
     $definitions -> {"links"} = $self -> _load_link_data($course)
         or return undef;
 
-    $self -> {"course"} = $course;
+    # reading was successful, so store the filename and data
+    $self -> {"course"}    = $course;
     $self -> {"coursedef"} = $definitions;
 
     return 1;
@@ -144,6 +147,9 @@ sub _load_link_data {
 
     $self -> clear_error();
 
+    # load and parse the xml link file. the XMLin settings are slightly
+    # voodoo: they ensure that links are stored as <id> => <url> associations,
+    # rather than <id> => { "content" => <url> }.
     my $linkfile = path_join($self -> {"basedir"}, "courses", $course, "links.xml");
     my $linkdata = eval { XMLin($linkfile, KeepRoot => 0, ContentKey => '-content', KeyAttr => [ 'name' ]) };
     return $self -> self_error("Link file loading failed for $course: $@")
@@ -166,6 +172,8 @@ sub _load_table_data {
 
     $self -> clear_error();
 
+    # Load the table definition xml file. Again, the XMLin settings are a bit voodoo,
+    # and they should be left alone unless you know what you're doing.
     my $tablefile = path_join($self -> {"basedir"}, "courses", $course, "table.xml");
     my $tabledata = eval { XMLin($tablefile, KeepRoot => 0, ForceArray => [ 'column' ], KeyAttr => { 'column' => '', data => 'for' }) };
     return $self -> self_error("Table definition loading failed for $course: $@")
@@ -274,6 +282,14 @@ sub _build_body {
 }
 
 
+## @method private $ _generate_template_vars($weeks, $semester, $week)
+# Generate a hash containing template replacement values to use in
+# row building.
+#
+# @param weeks    A reference to an array of week data organised by semester.
+# @param semester The semester number (1 or 2)
+# @param week     The week number (welcome week is 0)
+# @return A reference to a hash containing template replacement values.
 sub _generate_template_vars {
     my $self     = shift;
     my $weeks    = shift;
