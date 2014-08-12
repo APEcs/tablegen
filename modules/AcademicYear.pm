@@ -87,6 +87,22 @@ sub load_yearfile {
 }
 
 
+## @method $ available_years(void)
+# Fetch a list of academic years defined in the system.
+#
+# @return A reference to an array of academic year IDs.
+sub available_years {
+    my $self = shift;
+
+    $self -> clear_error();
+
+    return $self -> self_error("No academic years available. Check years.xml!")
+        if(!$self -> {"yeardata"} -> {"year"});
+
+    return [ keys(%{$self -> {"yeardata"} -> {"year"}}) ];
+}
+
+
 ## @method $ weeks(%args)
 # Fetch the list of weeks for the specified semester in a year
 #

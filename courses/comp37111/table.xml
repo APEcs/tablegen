@@ -7,12 +7,20 @@
    table.schedule {
      border: 1px #cccccc solid;
      border-spacing: 0px;
+     border-collapse: collapse;
+   }
+   table.schedule td, table.schedule tr {
+     border: 1px solid #ccc;
    }
    table.schedule td {
      background-color: #eeeeee;
    }
+   table.schedule td.date {
+     white-space: nowrap;
+   }
    table.schedule td.important {
      background-color: #ff0000;
+     font-weight: bold;
    }
    table.schedule tr.reading td {
      background-color: pink;
@@ -33,7 +41,7 @@
     <rows>
         <row semester="1" week="1">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect"><![CDATA[<a href="{L_[1-introduction-hos.pdf]}">Introduction</a>]]></data>
             <data for="who">TLJH</data>
             <data for="read"><![CDATA[<a href="{L_[COMP37111-lab-2013.pdf]}">The lab script<a/> (PDF). See below for details.]]></data>
@@ -42,7 +50,7 @@
 
         <row semester="1" week="2">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect"><![CDATA[<a href="{L_[2-procedural-hos.pdf]}">Procedural modelling]]></data>
             <data for="who">TLJH</data>
             <data for="read"><![CDATA[
@@ -55,7 +63,7 @@
 
         <row semester="1" week="3">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect"><![CDATA[<a href="{L_[3-Model-Acquisition-1-hos.pdf]}">Model Acquisition-1]]></data>
             <data for="who">TLJH</data>
             <data for="read"><![CDATA[
@@ -63,12 +71,12 @@
                 <hr />
                 <p>FOR YOU TO DO: Use <a href="http://www.sketchup.com/">Google Sketchup</a> to look at the <a href="{L_[kilburn1.skp]}">Kilburn Building model</a>.</p>
             ]]></data>
-	        <data for="lab">Lab clinic #1: {T_[weekdaymon + 3]}, 1100-1200, Room 1.8.</data>
+	        <data for="lab">Lab clinic #1: {T_[weekdaymon+3]}, 1100-1200, Room 1.8.</data>
         </row>
 
         <row semester="1" week="4">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect"><![CDATA[<a href="{L_[4-model-acquisition-2-hos.pdf]}">Model Acquisition-2]]></data>
             <data for="who">TLJH</data>
             <data for="read"><![CDATA[
@@ -80,7 +88,7 @@
 
         <row semester="1" week="5">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect"><![CDATA[<a href="{L_[5-geometry-from-images-hos.pdf]}">Model Acquisition-3]]></data>
             <data for="who">TLJH</data>
             <data for="read"><![CDATA[
@@ -92,13 +100,13 @@
 
         <row semester="1" week="6" class="reading">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect">Reading week</data>
         </row>
 
         <row semester="1" week="7">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect">The Rendering Equation and Raytracing</data>
             <data for="who">SRP</data>
             <data for="read"><![CDATA[
@@ -109,18 +117,18 @@
 
         <row semester="1" week="8">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect">Radiosity</data>
             <data for="who">SRP</data>
             <data for="read"><![CDATA[
                 <p>Goral, Cindy M. et al. (Jan. 1984). “Modeling the interaction of light between diffuse surfaces”. In: SIGGRAPH Comput. Graph. 18.3, pp. 213– 222. ISSN: 0097-8930. DOI: 10.1145/964965.808601.</p>
             ]]></data>
-	        <data for="lab">Lab clinic #2: {T_[weekdaymon + 3]}, 1100-1200, Room 1.8.</data>
+	        <data for="lab">Lab clinic #2: {T_[weekdaymon+3]}, 1100-1200, Room 1.8.</data>
         </row>
 
         <row semester="1" week="9">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect">Volume Rendering</data>
             <data for="who">SRP</data>
             <data for="read"><![CDATA[
@@ -130,32 +138,32 @@
 
         <row semester="1" week="10">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect">Spatial Enumeration</data>
             <data for="who">SRP</data>
             <data for="read"><![CDATA[
                 <p>Hibbard, William and David Santek (1989). “Interactivity is the key”. In: Proceedings of the 1989 Chapel Hill workshop on Volume visualization. VVS ’89. Chapel Hill, North Carolina, United States: ACM, pp. 39–43. DOI: 10.1145/329129.329356.</p>
             ]]></data>
-	        <data for="lab">Lab clinic #3: {T_[weekdaymon + 3]}, 1100-1200, Room 1.8.</data>
+	        <data for="lab">Lab clinic #3: {T_[weekdaymon+3]}, 1100-1200, Room 1.8.</data>
         </row>
 
         <row semester="1" week="11">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect">Culling</data>
             <data for="who">SRP</data>
             <data for="read"><![CDATA[
                 <p>Luebke, David and Chris Georges (1995). “Portals and mirrors: simple, fast evaluation of potentially visible sets”. In: Proceedings of the 1995 sym- posium on Interactive 3D graphics. I3D ’95. Monterey, California, United States: ACM, 105–ff. ISBN: 0-89791-736-7. DOI: 10.1145/199404. 199422.</p>
             ]]></data>
-	        <data for="lab" class="important">Lab submit deadline: 5pm {T_[weekdaymon + 4]}.</data>
+	        <data for="lab" class="important">Lab submit deadline: 5pm {T_[weekdaymon+4]}.</data>
         </row>
 
         <row semester="1" week="12">
             <data for="week">{T_[weeknum]}</data>
-            <data for="date">{T_[weekdate + 1]}</data>
+            <data for="date" class="date">{T_[weekdate+1]}</data>
             <data for="lect">Revision session</data>
             <data for="who">SRP</data>
-	        <data for="lab">Lab marking sessions: {T_[weekday]}, {T_[weekday + 2]}, and {T_[weekday + 3]}, to this timetable.</data>
+	        <data for="lab">Lab marking sessions: {T_[weekday]}, {T_[weekday+2]}, and {T_[weekday+3]}, to this timetable.</data>
         </row>
     </rows>
 </course>

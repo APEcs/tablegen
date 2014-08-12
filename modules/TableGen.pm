@@ -24,7 +24,7 @@ use v5.12;
 use base qw(Webperl::SystemModule);
 use Webperl::Utils qw(path_join);
 use XML::Simple;
-
+use Data::Dumper;
 # ============================================================================
 #  Constructor
 
@@ -37,9 +37,13 @@ use XML::Simple;
 sub new {
     my $invocant = shift;
     my $class    = ref($invocant) || $invocant;
-    my $self     = $class -> SUPER::new(minimal  => 1, # minimal tells SystemModule to skip object checks
-                                        course   => '',
-                                        datapath => '',
+    my $self     = $class -> SUPER::new(minimal => 1, # minimal tells SystemModule to skip object checks
+                                        course  => '',
+                                        basedir => '',
+                                        formats => { "weekdate"   => "%d %b",
+                                                     "weekdaymon" => "%a %d %b",
+                                                     "weekday"    => "%a %d",
+                                        },
                                         @_)
         or return undef;
 
@@ -57,9 +61,11 @@ sub new {
 #  Course loader and access
 
 ## @method $ load_course($course)
-# Load the table and file definitions for the specified file.
+# Load the table and link definitions for the specified course.
 #
-#
+# @param course The name of the course to load the definitions for. If not
+#               set, the course specified when creating the object is used.
+# @return true on success, undef on error.
 sub load_course {
     my $self   = shift;
     my $course = shift || $self -> {"course"};
@@ -83,7 +89,11 @@ sub load_course {
 }
 
 
-
+## @method $ generate($year)
+# Generate a table for the specified year using the current course definitions.
+#
+# @param year The Id of the year to generate the table for.
+# @return A string containing the table on success, undef on error.
 sub generate {
     my $self = shift;
     my $year = shift;
@@ -94,15 +104,22 @@ sub generate {
     return $self -> self_error("No course definition information loaded")
         if(!$self -> {"coursedef"});
 
+    # Build the week data for the current year
+    my $weeks = [ $self -> {"acyear"} -> weeks(year => $year, semester => "1", initial_welcome => 1),
+                  $self -> {"acyear"} -> weeks(year => $year, semester => "2") ];
+
+    # Construct the values inside the table
     my $header = $self -> _build_header($self -> {"coursedef"} -> {"table"} -> {"columns"} -> {"column"});
     my $body   = $self -> _build_body($self -> {"coursedef"} -> {"table"} -> {"columns"} -> {"column"},
-                                      $self -> {"coursedef"} -> {"table"} -> {"rows"} -> {"row"});
+                                      $self -> {"coursedef"} -> {"table"} -> {"rows"} -> {"row"},
+                                      $weeks);
 
     # work out whether the table needs a class definition set
     my $class = "";
-    $class = $self -> {"template"} -> load_template("class.tem", {"***class***" -> $self -> {"coursedef"} -> {"table"} -> {"columns"} -> {"class"}})
+    $class = $self -> {"template"} -> load_template("class.tem", {"***class***" => $self -> {"coursedef"} -> {"table"} -> {"columns"} -> {"class"}})
         if($self -> {"coursedef"} -> {"table"} -> {"columns"} -> {"class"});
 
+    # Build the table and the html page to contain it.
     my $table = $self -> {"template"} -> load_template("table.tem", {"***class***"  => $class,
                                                                      "***header***" => $header,
                                                                      "***rows***"   => $body});
@@ -111,7 +128,6 @@ sub generate {
                                                                     "***style***"  => $self -> {"coursedef"} -> {"table"} -> {"style"},
                                                                     "***table***"  => $table});
 }
-
 
 # ============================================================================
 #  Internal implementation
@@ -128,7 +144,7 @@ sub _load_link_data {
 
     $self -> clear_error();
 
-    my $linkfile = path_join($self -> {"datapath"}, "courses", $course, "links.xml");
+    my $linkfile = path_join($self -> {"basedir"}, "courses", $course, "links.xml");
     my $linkdata = eval { XMLin($linkfile, KeepRoot => 0, ContentKey => '-content', KeyAttr => [ 'name' ]) };
     return $self -> self_error("Link file loading failed for $course: $@")
         if($@);
@@ -150,7 +166,7 @@ sub _load_table_data {
 
     $self -> clear_error();
 
-    my $tablefile = path_join($self -> {"datapath"}, "courses", $course, "table.xml");
+    my $tablefile = path_join($self -> {"basedir"}, "courses", $course, "table.xml");
     my $tabledata = eval { XMLin($tablefile, KeepRoot => 0, ForceArray => [ 'column' ], KeyAttr => { 'column' => '', data => 'for' }) };
     return $self -> self_error("Table definition loading failed for $course: $@")
         if($@);
@@ -169,7 +185,7 @@ sub _load_table_data {
 # Generate a table header row using the specified column data to
 # define the values in the header cells.
 #
-# @param columns A refrence to an array of header columns.
+# @param columns A reference to an array of header columns.
 # @return A string containing the header row.
 sub _build_header {
     my $self    = shift;
@@ -196,18 +212,26 @@ sub _build_header {
 }
 
 
+## @method private $ _build_body($columns, $rows)
+# Generate the table body using the specified column and row data.
+#
+# @param columns A reference to an array of header columns.
+# @param rows    A reference to an array of row hashes.
+# @param weeks   A reference to an array of week definitions.
+# @return A string containing the header row.
 sub _build_body {
     my $self    = shift;
     my $columns = shift;
     my $rows    = shift;
-    my $body    = shift;
+    my $weeks   = shift;
+    my $body    = "";
 
     # Precalulate the number of columns to save a bit of time later
     my $colcount = scalar(@{$columns});
 
     # Now process each row in turn, going through the list of columns
     foreach my $rowdata (@{$rows}) {
-        my $rowvalues = {};
+        my $rowvalues = $self -> _generate_template_vars($weeks, $rowdata -> {"semester"}, $rowdata -> {"week"});
         my $row = "";
 
         # allow rows to mark themselves as headers
@@ -228,9 +252,9 @@ sub _build_body {
                 if($data -> {"class"});
 
             # Set the values to substitute
-            $rowvalues -> {"text"}  = $data -> {"content"};
-            $rowvalues -> {"span"}  = $span;
-            $rowvalues -> {"class"} = $class;
+            $rowvalues -> {"***text***"}  = $data -> {"content"};
+            $rowvalues -> {"***span***"}  = $span;
+            $rowvalues -> {"***class***"} = $class;
 
             $row .= $self -> {"template"} -> load_template($mode, $rowvalues);
         }
@@ -247,6 +271,28 @@ sub _build_body {
     }
 
     return $body;
+}
+
+
+sub _generate_template_vars {
+    my $self     = shift;
+    my $weeks    = shift;
+    my $semester = shift;
+    my $week     = shift;
+
+    my $output = { "{T_[weeknum]}"  => $week,
+                   "{T_[semester]}" => $semester };
+
+    my $date = $weeks -> [$semester - 1] -> [$week] -> {"date"};
+    for(my $i = 0; $i < 7; ++$i, $date -> add(days => 1)) {
+        my $ext = $i ? "+$i" : "";
+
+        $output -> {"{T_[weekdate$ext]}"}   = $date -> strftime($self -> {"formats"} -> {"weekdate"});
+        $output -> {"{T_[weekday$ext]}"}    = $date -> strftime($self -> {"formats"} -> {"weekday"});
+        $output -> {"{T_[weekdaymon$ext]}"} = $date -> strftime($self -> {"formats"} -> {"weekdaymon"});
+    }
+
+    return $output;
 }
 
 1;
