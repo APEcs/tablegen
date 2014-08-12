@@ -24,7 +24,7 @@ use v5.12;
 use base qw(Webperl::SystemModule);
 use Webperl::Utils qw(path_join);
 use XML::Simple;
-use Data::Dumper;
+
 # ============================================================================
 #  Constructor
 
@@ -282,6 +282,11 @@ sub _generate_template_vars {
 
     my $output = { "{T_[weeknum]}"  => $week,
                    "{T_[semester]}" => $semester };
+
+    # Add links
+    foreach my $file (keys(%{$self -> {"coursedef"} -> {"links"} -> {"link"}})) {
+        $output -> {"{L_[$file]}"} = $self -> {"coursedef"} -> {"links"} -> {"link"} -> {$file};
+    }
 
     my $date = $weeks -> [$semester - 1] -> [$week] -> {"date"};
     for(my $i = 0; $i < 7; ++$i, $date -> add(days => 1)) {
