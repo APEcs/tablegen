@@ -7,48 +7,59 @@
 # to generate a course timeline table (showing what happens in each week,
 # with links to supporting content as needed).
 #
-# To generate a table for a course, run this script with the course code:
+# To generate a table for a course, run this script with the course code
+# and academic year:
 #
-# ./tablegen.pl -c comp37111
+# ./tablegen.pl -c comp37111 -y AY1415
 #
 # This will print a HTML page containing the course timeline table to
 # stdout.
 #
-# To obtain a list of known courses, specify the -l option on the command
-# line:
+# To obtain a list of known courses and supported academic years, supply
+# the -l option on the command line:
 #
 # ./tablegen.pl -l
 #
-# If -l is set, the script will print the available courses and exit.
+# If -l is set, the script will print the available courses and years,
+# and exit.
 #
 # @author  Chris Page &lt;chris@starforge.co.uk&gt;
-#
 
 use utf8;
 use v5.12;
 use FindBin;
 
-# Work out where the script is, so loading can work.
+# Work out where the script is, so module and resource loading can work.
 my $scriptpath;
 BEGIN {
-    if($FindBin::Bin =~ /(.*)/) {
+    # This handles tainting, horribly permissively
+    if($FindBin::Bin =~ /^(.*)$/) {
         $scriptpath = $1;
     }
 }
 
+# Add the support modules to the load path
 use lib "$scriptpath/webperl";
 use lib "$scriptpath/modules";
 
+# Custom modules to support generation
 use AcademicYear;
 use TableGen;
 use Webperl::Template;
 use Webperl::Utils qw(path_join save_file);
+
+# Standard perl modules
 use Getopt::Long;
 use Pod::Usage;
+
+
+# ============================================================================
+#  Support functions
 
 ## @fn void list_courses($acyear)
 # Print a list of available courses to stdout and then exit.
 #
+# @param acyear A reference to an AcademicYear object.
 sub list_courses {
     my $acyear = shift;
 
@@ -73,13 +84,16 @@ sub list_courses {
 }
 
 
+# ============================================================================
+#  The code that actually Does Stuff.
+
 # default setup variables
-my $course  = '';
-my $year    = '';
-my $list    = 0;
-my $outfile = '';
-my $help    = 0;
-my $man     = 0;
+my $course  = ''; # which course is the user interested in?
+my $year    = ''; # which year should the timetable be generated for?
+my $list    = 0;  # Show a list of courses and years?
+my $outfile = ''; # write the output to a file?
+my $help    = 0;  # Show the help documentation
+my $man     = 0;  # Print the full man page
 
 # Parse the command line options
 GetOptions('c|course:s' => \$course,
@@ -92,7 +106,8 @@ GetOptions('c|course:s' => \$course,
 pod2usage(-verbose => 1) if($help || ((!$course || !$year) && !$list && !$man));
 pod2usage(-exitstatus => 0, -verbose => 2) if($man);
 
-# build the objects needed to generate tables
+# Build the objects needed to generate tables
+
 # AcademicYear handles all things related to years, semesters, and weeks.
 my $acyear = AcademicYear -> new(yearfile => path_join($scriptpath, "config", "years.xml"))
     or die "Initialisation error: ".$Webperl::SystemModule::errstr."\n";
@@ -109,9 +124,12 @@ my $tablegen = TableGen -> new(acyear   => $acyear,
 # Handle listing if requested (this will not return)
 list_courses($acyear) if($list);
 
+# Explicitly load the course, rather than relying on TableGen's constructor
+# to ensure that errors are caught properly.
 $tablegen -> load_course($course)
     or die "Unable to load course '$course': ".$tablegen -> errstr()."\n";
 
+# Build the table page.
 my $table = $tablegen -> generate($year);
 
 # If the user has specified an output file, use that rather
@@ -122,7 +140,6 @@ if($outfile) {
     binmode STDOUT,":utf8";
     print $table;
 }
-
 
 __END__
 
@@ -138,6 +155,7 @@ tablegen.pl [options]
     -h, -?, --help  Show a brief help message.
     -m, --man       Show full documentation.
     -c, --course    The ID of the course to generate a table for.
+    -y, --year      The academic year to generate the table for.
     -o, --output    The name of the file to write the table to (if not set,
                     the table is written to sdtout)
     -l, --list      List the available courses, and exit.
