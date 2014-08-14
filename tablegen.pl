@@ -52,7 +52,6 @@ use Webperl::Utils qw(path_join save_file);
 use Getopt::Long;
 use Pod::Usage;
 
-
 # ============================================================================
 #  Support functions
 
