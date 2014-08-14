@@ -24,7 +24,7 @@ use v5.12;
 use base qw(Webperl::SystemModule);
 use Webperl::Utils qw(path_join);
 use XML::Simple;
-use Data::Dumper;
+
 # ============================================================================
 #  Constructor
 
@@ -111,7 +111,6 @@ sub generate {
     my $weeks = [ $self -> {"acyear"} -> weeks(year => $year, semester => "1", initial_welcome => 1),
                   $self -> {"acyear"} -> weeks(year => $year, semester => "2") ];
 
-
     # Construct the values inside the table
     my $header = $self -> _build_header($self -> {"coursedef"} -> {"table"} -> {"columns"} -> {"column"});
     my $body   = $self -> _build_body($self -> {"coursedef"} -> {"table"} -> {"columns"} -> {"column"},
@@ -184,7 +183,8 @@ sub _load_table_data {
     # The $tabledata -> {"rows"} -> {"row"} value is an arrayref, there may need
     # to be a lookup table too, so construct one
     foreach my $row (@{$tabledata -> {"rows"} -> {"row"}}) {
-        push(@{$tabledata -> {"rows"} -> {"rowhash"} -> {$row -> {"semester"}} -> {$row -> {"week"}}}, $row);
+        my $id = defined($row -> {"week"}) ? $row -> {"week"} : $row -> {"break"};
+        push(@{$tabledata -> {"rows"} -> {"rowhash"} -> {$row -> {"semester"}} -> {$id}}, $row);
     }
 
     return $tabledata;
@@ -245,13 +245,12 @@ sub _build_body {
             my $weekdata = $semester -> {$week -> {"type"}} -> {$week -> {"id"}};
 
             # Got a semester and week number, fetch the defined value for that
-            my $rows = $rowhash -> {$weekdata -> {"semester"}} -> {$weekdata -> {"id"}};
+            my $rows = $rowhash -> {$weekdata -> {"semester"}} -> {$week -> {"id"}};
             next unless($rows);
 
             foreach my $rowdata (@{$rows}) {
                 my $row = "";
                 my $rowvalues = $self -> _generate_template_vars($weekdata);
-                print "sem: ".$rowdata -> {"semester"}." wk: ".$rowdata -> {"week"}." data: ".Dumper($rowvalues);
 
                 # allow rows to mark themselves as headers
                 my $mode = $rowdata -> {"header"} ? "header.tem" : "cell.tem";
