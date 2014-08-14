@@ -25,6 +25,7 @@ use base qw(Webperl::SystemModule);
 use Webperl::Utils qw(hash_or_hashref);
 use DateTime;
 use XML::Simple;
+use Data::Dumper;
 
 # ============================================================================
 #  Constructor
@@ -132,38 +133,53 @@ sub weeks {
     # Start off at the beginning of the semester
     my $currdate = $semdata -> {"start"} -> clone();
 
-    my @days = ();
+    my $dates = { "teaching" => { },
+                  "break"    => { },
+                  "calendar" => [] };
     my $week = 0;
     while($currdate < $semdata -> {"end"}) {
         my $break = $self -> _in_break($currdate, $semdata);
 
         # Not in a break, treat each week individually
         if(!$break) {
+            # Welcome week always gets week 0
             if($args -> {"initial_welcome"} && $currdate == $semdata -> {"start"}) {
-                push(@days, {"id"   => $week, # Welcome week gets week number 0
-                             "name" => "Welcome Week",
-                             "date" => $currdate -> clone()});
+                $dates -> {"teaching"} -> {$week} = {"id"       => $week, # Welcome week gets week number 0
+                                                     "name"     => "Welcome Week",
+                                                     "semester" => $args -> {"semester"},
+                                                     "date"     => $currdate -> clone()};
+
+            # Otherwise, increment the week number (so the used week is >= 1)
+            # and store the day
             } else {
-                push(@days, {"id"   => ++$week,
-                             "name" => "Week $week",
-                             "date" => $currdate -> clone()});
+                ++$week;
+
+                $dates -> {"teaching"} -> {$week} = {"id"       => $week,
+                                                     "name"     => "Week $week",
+                                                     "semester" => $args -> {"semester"},
+                                                     "date"     => $currdate -> clone()};
             }
-            $currdate -> add(weeks => 1);
+
+            push(@{$dates -> {"calendar"}}, {"type" => "teaching",
+                                             "id"   => $week});
 
         # Breaks just report the break, including start/end.
         } else {
-            push(@days, {"id"    => $break -> {"id"},
-                         "break" => $break,
-                         "name"  => $break -> {"name"}});
+            $dates -> {"break"} -> {$break -> {"id"}} = {"id"       => $break -> {"id"},
+                                                         "break"    => $break,
+                                                         "semester" => $args -> {"semester"},
+                                                         "name"     => $break -> {"name"},
+                                                         "date"     => $currdate -> clone()};
 
-            # skip straight to the end
-            $currdate = $break -> {"end"} -> clone();
-
-            $currdate -> add(days => 1) if($self -> {"fix_breaks"});
+            push(@{$dates -> {"calendar"}}, {"type" => "break",
+                                             "id"   => $break -> {"id"}});
         }
+
+        # And move to next week
+        $currdate -> add(weeks => 1);
     }
 
-    return \@days;
+    return $dates;
 }
 
 

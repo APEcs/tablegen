@@ -24,7 +24,7 @@ use v5.12;
 use base qw(Webperl::SystemModule);
 use Webperl::Utils qw(path_join);
 use XML::Simple;
-
+use Data::Dumper;
 # ============================================================================
 #  Constructor
 
@@ -111,10 +111,12 @@ sub generate {
     my $weeks = [ $self -> {"acyear"} -> weeks(year => $year, semester => "1", initial_welcome => 1),
                   $self -> {"acyear"} -> weeks(year => $year, semester => "2") ];
 
+
     # Construct the values inside the table
     my $header = $self -> _build_header($self -> {"coursedef"} -> {"table"} -> {"columns"} -> {"column"});
     my $body   = $self -> _build_body($self -> {"coursedef"} -> {"table"} -> {"columns"} -> {"column"},
                                       $self -> {"coursedef"} -> {"table"} -> {"rows"} -> {"row"},
+                                      $self -> {"coursedef"} -> {"table"} -> {"rows"} -> {"rowhash"},
                                       $weeks);
 
     # work out whether the table needs a class definition set
@@ -175,14 +177,14 @@ sub _load_table_data {
     # Load the table definition xml file. Again, the XMLin settings are a bit voodoo,
     # and they should be left alone unless you know what you're doing.
     my $tablefile = path_join($self -> {"basedir"}, "courses", $course, "table.xml");
-    my $tabledata = eval { XMLin($tablefile, KeepRoot => 0, ForceArray => [ 'column' ], KeyAttr => { 'column' => '', data => 'for' }) };
+    my $tabledata = eval { XMLin($tablefile, KeepRoot => 0, ForceArray => [ 'column', 'data' ], KeyAttr => { 'column' => '', data => 'for' }) };
     return $self -> self_error("Table definition loading failed for $course: $@")
         if($@);
 
     # The $tabledata -> {"rows"} -> {"row"} value is an arrayref, there may need
     # to be a lookup table too, so construct one
     foreach my $row (@{$tabledata -> {"rows"} -> {"row"}}) {
-        $tabledata -> {"rows"} -> {"rowhash"} -> {$row -> {"semester"}} -> {$row -> {"week"}} = $row;
+        push(@{$tabledata -> {"rows"} -> {"rowhash"} -> {$row -> {"semester"}} -> {$row -> {"week"}}}, $row);
     }
 
     return $tabledata;
@@ -231,50 +233,61 @@ sub _build_body {
     my $self    = shift;
     my $columns = shift;
     my $rows    = shift;
+    my $rowhash = shift;
     my $weeks   = shift;
     my $body    = "";
 
     # Precalulate the number of columns to save a bit of time later
     my $colcount = scalar(@{$columns});
 
-    # Now process each row in turn, going through the list of columns
-    foreach my $rowdata (@{$rows}) {
-        my $rowvalues = $self -> _generate_template_vars($weeks, $rowdata -> {"semester"}, $rowdata -> {"week"});
-        my $row = "";
+    foreach my $semester (@{$weeks}) {
+        foreach my $week (@{$semester -> {"calendar"}}) {
+            my $weekdata = $semester -> {$week -> {"type"}} -> {$week -> {"id"}};
 
-        # allow rows to mark themselves as headers
-        my $mode = $rowdata -> {"header"} ? "header.tem" : "cell.tem";
+            # Got a semester and week number, fetch the defined value for that
+            my $rows = $rowhash -> {$weekdata -> {"semester"}} -> {$weekdata -> {"id"}};
+            next unless($rows);
 
-        for(my $colnum = 0; $colnum < $colcount; ++$colnum) {
-            # Pull out some values to help with readability
-            my $column = $columns -> [$colnum];
-            my $data   = $rowdata -> {"data"} -> {$column -> {"id"}};
-            my ($span, $class) = ("", "");
+            foreach my $rowdata (@{$rows}) {
+                my $row = "";
+                my $rowvalues = $self -> _generate_template_vars($weekdata);
+                print "sem: ".$rowdata -> {"semester"}." wk: ".$rowdata -> {"week"}." data: ".Dumper($rowvalues);
 
-            if($data -> {"span"}) {
-                $span = $self -> {"template"} -> load_template("colspan.tem", {"***span***" => $data -> {"span"}});
-                $colnum += ($data -> {"span"} - 1); # Skip columns to match the span
+                # allow rows to mark themselves as headers
+                my $mode = $rowdata -> {"header"} ? "header.tem" : "cell.tem";
+
+                for(my $colnum = 0; $colnum < $colcount; ++$colnum) {
+                    # Pull out some values to help with readability
+                    my $column = $columns -> [$colnum];
+                    my $data   = $rowdata -> {"data"} -> {$column -> {"id"}};
+                    my ($span, $class) = ("", "");
+
+                    if($data -> {"span"}) {
+                        $span = $self -> {"template"} -> load_template("colspan.tem", {"***span***" => $data -> {"span"}});
+                        $colnum += ($data -> {"span"} - 1); # Skip columns to match the span
+                    }
+
+                    $class = $self -> {"template"} -> load_template("class.tem", {"***class***" => $data -> {"class"}})
+                        if($data -> {"class"});
+
+                    # Set the values to substitute
+                    $rowvalues -> {"***text***"}  = $data -> {"content"};
+                    $rowvalues -> {"***span***"}  = $span;
+                    $rowvalues -> {"***class***"} = $class;
+
+                    $row .= $self -> {"template"} -> load_template($mode, $rowvalues);
+                }
+
+                # Wrap the row up in a row template if needed
+                if($row) {
+                    my $rowclass = "";
+                    $rowclass = $self -> {"template"} -> load_template("class.tem", {"***class***" => $rowdata -> {"class"}})
+                        if($rowdata -> {"class"});
+
+                    $body .= $self -> {"template"} -> load_template("row.tem", {"***class***" => $rowclass,
+                                                                                "***cols***"  => $row});
+                }
             }
-
-            $class = $self -> {"template"} -> load_template("class.tem", {"***class***" => $data -> {"class"}})
-                if($data -> {"class"});
-
-            # Set the values to substitute
-            $rowvalues -> {"***text***"}  = $data -> {"content"};
-            $rowvalues -> {"***span***"}  = $span;
-            $rowvalues -> {"***class***"} = $class;
-
-            $row .= $self -> {"template"} -> load_template($mode, $rowvalues);
-        }
-
-        # Wrap the row up in a row template if needed
-        if($row) {
-            my $rowclass = "";
-            $rowclass = $self -> {"template"} -> load_template("class.tem", {"***class***" => $rowdata -> {"class"}})
-                if($rowdata -> {"class"});
-
-            $body .= $self -> {"template"} -> load_template("row.tem", {"***class***" => $rowclass,
-                                                                        "***cols***"  => $row});
         }
     }
 
@@ -282,35 +295,45 @@ sub _build_body {
 }
 
 
-## @method private $ _generate_template_vars($weeks, $semester, $week)
+## @method private $ _generate_template_vars($week)
 # Generate a hash containing template replacement values to use in
 # row building.
 #
-# @param weeks    A reference to an array of week data organised by semester.
-# @param semester The semester number (1 or 2)
-# @param week     The week number (welcome week is 0)
+# @param week A reference to the week data
 # @return A reference to a hash containing template replacement values.
 sub _generate_template_vars {
     my $self     = shift;
-    my $weeks    = shift;
-    my $semester = shift;
     my $week     = shift;
 
-    my $output = { "{T_[weeknum]}"  => $week,
-                   "{T_[semester]}" => $semester };
+    my $output = { "{T_[weeknum]}"  => $week -> {"id"},
+                   "{T_[semester]}" => $week -> {"semester"} };
 
     # Add links
-    foreach my $file (keys(%{$self -> {"coursedef"} -> {"links"} -> {"link"}})) {
-        $output -> {"{L_[$file]}"} = $self -> {"coursedef"} -> {"links"} -> {"link"} -> {$file};
+    if($self -> {"coursedef"} -> {"links"} -> {"link"}) {
+        foreach my $file (keys(%{$self -> {"coursedef"} -> {"links"} -> {"link"}})) {
+            $output -> {"{L_[$file]}"} = $self -> {"coursedef"} -> {"links"} -> {"link"} -> {$file};
+        }
     }
 
-    my $date = $weeks -> [$semester - 1] -> [$week] -> {"date"};
+    my $date = $week -> {"date"} -> clone();;
     for(my $i = 0; $i < 7; ++$i, $date -> add(days => 1)) {
         my $ext = $i ? "+$i" : "";
 
         $output -> {"{T_[weekdate$ext]}"}   = $date -> strftime($self -> {"formats"} -> {"weekdate"});
         $output -> {"{T_[weekday$ext]}"}    = $date -> strftime($self -> {"formats"} -> {"weekday"});
         $output -> {"{T_[weekdaymon$ext]}"} = $date -> strftime($self -> {"formats"} -> {"weekdaymon"});
+    }
+
+    if($week -> {"break"}) {
+        my $break = $week -> {"break"};
+
+        $output -> {"{T_[breakname]}"}    = $break -> {"name"};
+        $output -> {"{T_[breaksdate]}"}   = $break -> {"start"} -> strftime($self -> {"formats"} -> {"weekdate"});
+        $output -> {"{T_[breaksday]}"}    = $break -> {"start"} -> strftime($self -> {"formats"} -> {"weekday"});
+        $output -> {"{T_[breaksdaymon]}"} = $break -> {"start"} -> strftime($self -> {"formats"} -> {"weekdaymon"});
+        $output -> {"{T_[breakedate]}"}   = $break -> {"end"} -> strftime($self -> {"formats"} -> {"weekdate"});
+        $output -> {"{T_[breakeday]}"}    = $break -> {"end"} -> strftime($self -> {"formats"} -> {"weekday"});
+        $output -> {"{T_[breakedaymon]}"} = $break -> {"end"} -> strftime($self -> {"formats"} -> {"weekdaymon"});
     }
 
     return $output;
