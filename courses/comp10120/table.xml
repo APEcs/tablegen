@@ -193,7 +193,7 @@
         <row semester="1" break="xmas">
             <data for="week" span="6" class="title"><![CDATA[{T_[breakname]} (<a href="{L_[]}">Reflective notes</a>) {T_[breaksdaymon]} - {T_[breakedaymon]}]]></data>
         </row>
-        <row semester="1" break="exams">
+        <row semester="1" break="exams1">
             <data for="week" span="6" class="title"><![CDATA[{T_[breakname]} {T_[breaksdaymon]} - {T_[breakedaymon]}]]></data>
         </row>
 
@@ -274,7 +274,7 @@
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
         </row>
 
-        <row semester="2" week="9" class="phase4">
+        <row semester="2" week="11" class="phase4">
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 11: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step11]}">Review</a>]]></data>
@@ -282,13 +282,16 @@
             <data for="other"><![CDATA[<a href="{L_[Phase4+Step11]}">Redistribution of Presentation Marks</a>]]></data>
         </row>
 
-        <row semester="2" week="9" class="phase4">
+        <row semester="2" week="12" class="phase4">
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 12: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step12]}">Report</a>]]></data>
         </row>
 
         <row semester="2" break="easter">
+            <data for="week" span="6" class="title"><![CDATA[{T_[breakname]} {T_[breaksdaymon]} - {T_[breakedaymon]}]]></data>
+        </row>
+        <row semester="2" break="exams2">
             <data for="week" span="6" class="title"><![CDATA[{T_[breakname]} {T_[breaksdaymon]} - {T_[breakedaymon]}]]></data>
         </row>
 
