@@ -239,10 +239,19 @@ sub _build_body {
 
     # Precalulate the number of columns to save a bit of time later
     my $colcount = scalar(@{$columns});
-
+    my $break = "";
     foreach my $semester (@{$weeks}) {
         foreach my $week (@{$semester -> {"calendar"}}) {
             my $weekdata = $semester -> {$week -> {"type"}} -> {$week -> {"id"}};
+
+            # Handle skipping of multi-week breaks
+            if($week -> {"type"} eq "break") {
+                next if($break && $break eq $week -> {"id"});
+
+                $break = $week -> {"id"};
+            } else {
+                $break = "";
+            }
 
             # Got a semester and week number, fetch the defined value for that
             my $rows = $rowhash -> {$weekdata -> {"semester"}} -> {$week -> {"id"}};
