@@ -3,4 +3,55 @@
 
 -->
 <links>
+    <link name="EBLSurvey"></link>
+    <link name="IndividualLearningProfile"></link>
+    <link name="Lab1"></link>
+    <link name="Lab2"></link>
+    <link name="Lab3"></link>
+    <link name="Lab4"></link>
+    <link name="Lab5"></link>
+    <link name="Lab6"></link>
+    <link name="Lab7"></link>
+    <link name="Lab8"></link>
+    <link name="Labs"></link>
+    <link name="Lectures"></link>
+    <link name="PersonalWiki"></link>
+    <link name="Phase0"></link>
+    <link name="Phase+0"></link>
+    <link name="Phase1"></link>
+    <link name="Phase1+Step1"></link>
+    <link name="Phase1+Step2"></link>
+    <link name="Phase2"></link>
+    <link name="Phase2+Step1"></link>
+    <link name="Phase2+Step2"></link>
+    <link name="Phase2+Step3"></link>
+    <link name="Phase2+Step4"></link>
+    <link name="Phase3"></link>
+    <link name="Phase3+Step1"></link>
+    <link name="Phase3+Step2"></link>
+    <link name="Phase3+Step3"></link>
+    <link name="Phase3+Step4"></link>
+    <link name="Phase3+Step5"></link>
+    <link name="Phase3+Step6"></link>
+    <link name="Phase4"></link>
+    <link name="Phase4+Step1"></link>
+    <link name="Phase4+Step10"></link>
+    <link name="Phase4+Step11"></link>
+    <link name="Phase4+Step12"></link>
+    <link name="Phase4+Step4"></link>
+    <link name="Phase4+Step8"></link>
+    <link name="Phase4+Step9"></link>
+    <link name="ProgrammingExp"></link>
+    <link name="ReflectiveJournal1.1"></link>
+    <link name="ReflectiveJournal1.10"></link>
+    <link name="ReflectiveJournal1.11"></link>
+    <link name="ReflectiveJournal1.12"></link>
+    <link name="ReflectiveJournal1.2"></link>
+    <link name="ReflectiveJournal1.3"></link>
+    <link name="ReflectiveJournal1.4"></link>
+    <link name="ReflectiveJournal1.5"></link>
+    <link name="ReflectiveJournal1.7"></link>
+    <link name="ReflectiveJournal1.8"></link>
+    <link name="ReflectiveJournal1.9"></link>
+    <link name="ReflectiveNotes"></link>
 </links>
