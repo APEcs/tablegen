@@ -319,7 +319,12 @@ sub _generate_template_vars {
     # Add links
     if($self -> {"coursedef"} -> {"links"} -> {"link"}) {
         foreach my $file (keys(%{$self -> {"coursedef"} -> {"links"} -> {"link"}})) {
-            $output -> {"{L_[$file]}"} = $self -> {"coursedef"} -> {"links"} -> {"link"} -> {$file};
+            my $content = $self -> {"coursedef"} -> {"links"} -> {"link"} -> {$file};
+
+            # Handle situations where XML::Simple has used a content key, despite being told not to
+            $content = $content -> {"content"} if(ref($content) eq "HASH");
+
+            $output -> {"{L_[$file]}"} = $content;
         }
     }
 
