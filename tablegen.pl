@@ -162,13 +162,14 @@ tablegen.pl - Generate course timeline tables
 tablegen.pl [options]
 
  Options:
-    -h, -?, --help  Show a brief help message.
-    -m, --man       Show full documentation.
-    -c, --course    The ID of the course to generate a table for.
-    -y, --year      The academic year to generate the table for.
-    -o, --output    The name of the file to write the table to (if not set,
-                    the table is written to sdtout)
-    -l, --list      List the available courses, and exit.
+    -h, -?, --help   Show a brief help message.
+    -m, --man        Show full documentation.
+    -c, --course     The ID of the course to generate a table for.
+    -y, --year       The academic year to generate the table for.
+    -o, --output     The name of the file to write the table to (if not set,
+                     the table is written to sdtout)
+    -i, --inline-css Inline any css as style attributes.
+    -l, --list       List the available courses, and exit.
 
 =head1 OPTIONS
 
