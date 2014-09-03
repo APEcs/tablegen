@@ -48,6 +48,8 @@ use TableGen;
 use Webperl::Template;
 use Webperl::Utils qw(path_join save_file);
 
+use CSS::Inliner;
+
 # Standard perl modules
 use Getopt::Long;
 use Pod::Usage;
@@ -91,16 +93,18 @@ my $course  = ''; # which course is the user interested in?
 my $year    = ''; # which year should the timetable be generated for?
 my $list    = 0;  # Show a list of courses and years?
 my $outfile = ''; # write the output to a file?
+my $inline  = 0;  # Should css be inlined?
 my $help    = 0;  # Show the help documentation
 my $man     = 0;  # Print the full man page
 
 # Parse the command line options
-GetOptions('c|course:s' => \$course,
-           'y|year=s'   => \$year,
-           'l|list!'    => \$list,
-           'o|output:s' => \$outfile,
-           'h|help|?'   => \$help,
-           'm|man'      => \$man)
+GetOptions('c|course:s'    => \$course,
+           'y|year=s'      => \$year,
+           'l|list!'       => \$list,
+           'i|inline-css!' => \$inline,
+           'o|output:s'    => \$outfile,
+           'h|help|?'      => \$help,
+           'm|man'         => \$man)
     or pod2usage(2);
 pod2usage(-verbose => 1) if($help || ((!$course || !$year) && !$list && !$man));
 pod2usage(-exitstatus => 0, -verbose => 2) if($man);
@@ -130,6 +134,13 @@ $tablegen -> load_course($course)
 
 # Build the table page.
 my $table = $tablegen -> generate($year);
+
+# inline if needed
+if($inline) {
+    my $inliner = new CSS::Inliner();
+    $inliner -> read({ html => $table });
+    $table = $inliner -> inlinify();
+}
 
 # If the user has specified an output file, use that rather
 # than printing to stdout.
