@@ -237,6 +237,9 @@ sub _build_body {
     my $weeks   = shift;
     my $body    = "";
 
+    # Fix up link targets
+    $self -> _fixup_targets($rows, $self -> {"coursedef"} -> {"links"} -> {"link"});
+
     # Precalulate the number of columns to save a bit of time later
     my $colcount = scalar(@{$columns});
     my $break = "";
@@ -321,9 +324,10 @@ sub _generate_template_vars {
         foreach my $file (keys(%{$self -> {"coursedef"} -> {"links"} -> {"link"}})) {
             my $content = $self -> {"coursedef"} -> {"links"} -> {"link"} -> {$file};
 
-            # Handle situations where XML::Simple has used a content key, despite being told not to
-            $content = $content -> {"content"} if(ref($content) eq "HASH");
-
+            # Handle situations where XML::Simple has used a content key
+            if(ref($content) eq "HASH") {
+                $content = $content -> {"content"};
+            }
             $output -> {"{L_[$file]}"} = $content;
         }
     }
@@ -351,5 +355,54 @@ sub _generate_template_vars {
 
     return $output;
 }
+
+
+## @method private void _fixup_targets($rows, $links)
+# Convert any links in the row data that should go to new windows. This goes
+# through the list of rows, and for each row it processes the column data,
+# modifying links that should open in a new window to include the necessary
+# target attribute.
+#
+# @param rows  A reference to an array of rows to check.
+# @param links A reference to a hash of links to check through to determine
+#              whether links should open in new windows.
+sub _fixup_targets {
+    my $self  = shift;
+    my $rows  = shift;
+    my $links = shift;
+
+    foreach my $row (@{$rows}) {
+        foreach my $data (keys(%{$row -> {"data"}})) {
+            $row -> {"data"} -> {$data} -> {"content"} = $self -> _fix_target($row -> {"data"} -> {$data} -> {"content"});
+        }
+    }
+}
+
+
+## @method private $ _fix_target($text, $links)
+# Determine whether the specified text contains a link that should open in
+# a new window. If so, update the link to include the required target.
+#
+# @param text The string to check for new window links.
+# @param links A reference to a hash of links to check through to determine
+#              whether links should open in new windows.
+# @return The updated string.
+sub _fix_target {
+    my $self  = shift;
+    my $text  = shift;
+    my $links = shift;
+
+    foreach my $link (keys(%{$links})) {
+        my $content = $links -> {$link};
+
+        # Handle situations where XML::Simple has used a content key
+        if(ref($content) eq "HASH" && $content -> {"window"} && $content -> {"window"} eq "new") {
+            $text =~ s/(href=["']\{L_\[$link\]\}["'])/$1 target="_blank"/g;
+        }
+    }
+
+    return $text;
+}
+
 
 1;
