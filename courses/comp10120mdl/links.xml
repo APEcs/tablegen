@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- Format information:
+
+-->
+<links>
+    <link name="EBLSurvey" window="new"><![CDATA[https://moodle.cs.man.ac.uk/mod/quiz/view.php?id=13133]]></link>
+    <link name="IndividualLearningProfile"><![CDATA[https://moodle.cs.man.ac.uk/mod/quiz/view.php?id=13101]]></link>
+    <link name="PersonalWiki"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13099]]></link>
+    <link name="ProgrammingExp"><![CDATA[https://moodle.cs.man.ac.uk/mod/quiz/view.php?id=13118]]></link>
+    <link name="ReflectiveJournal1.1"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13100]]></link>
+    <link name="ReflectiveJournal1.2"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13108]]></link>
+    <link name="ReflectiveJournal1.3"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13112]]></link>
+    <link name="ReflectiveJournal1.4"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13116]]></link>
+    <link name="ReflectiveJournal1.5"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13121]]></link>
+    <link name="ReflectiveJournal1.7"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13126]]></link>
+    <link name="ReflectiveJournal1.8"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13129]]></link>
+    <link name="ReflectiveJournal1.9"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13132]]></link>
+    <link name="ReflectiveJournal1.10"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13136]]></link>
+    <link name="ReflectiveJournal1.11"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13139]]></link>
+    <link name="ReflectiveJournal1.12"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13142]]></link>
+    <link name="LabIntro"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=LabIntro]]></link>
+    <link name="Lab1"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Lab1]]></link>
+    <link name="Lab2"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Lab2]]></link>
+    <link name="Lab3"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Lab3]]></link>
+    <link name="Lab4"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Lab4]]></link>
+    <link name="Lab5"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Lab5]]></link>
+    <link name="Lab6"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Lab6]]></link>
+    <link name="Lab7"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Lab7]]></link>
+    <link name="Lab8"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Lab8]]></link>
+    <link name="Lab9"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Lab8]]></link>
+    <link name="Labs"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Labs]]></link>
+    <link name="Lectures"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Lectures]]></link>
+    <link name="Phase0"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase+0]]></link>
+    <link name="Phase+0"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase+0]]></link>
+    <link name="Phase1"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase+1]]></link>
+    <link name="Phase1+Step1"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase1+Step1]]></link>
+    <link name="Phase1+Step2"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase1+Step2]]></link>
+    <link name="Phase2"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase+2]]></link>
+    <link name="Phase2+Step1"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase2+Step1]]></link>
+    <link name="Phase2+Step2"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase2+Step2]]></link>
+    <link name="Phase2+Step3"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase2+Step3]]></link>
+    <link name="Phase2+Step4"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase2+Step4]]></link>
+    <link name="Phase3"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase+3]]></link>
+    <link name="Phase3+Step1"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase3+Step1]]></link>
+    <link name="Phase3+Step2"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase3+Step2]]></link>
+    <link name="Phase3+Step3"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase3+Step3]]></link>
+    <link name="Phase3+Step4"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase3+Step4]]></link>
+    <link name="Phase3+Step5"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase3+Step5]]></link>
+    <link name="Phase3+Step6"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase3+Step6]]></link>
+    <link name="Phase4"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase+4]]></link>
+    <link name="Phase4+Step1"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase4+Step1]]></link>
+    <link name="Phase4+Step4"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase4+Step4]]></link>
+    <link name="Phase4+Step8"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase4+Step8]]></link>
+    <link name="Phase4+Step9"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase4+Step9]]></link>
+    <link name="Phase4+Step10"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase4+Step10]]></link>
+    <link name="Phase4+Step11"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase4+Step11]]></link>
+    <link name="Phase4+Step12"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase4+Step12]]></link>
+    <link name="ReflectiveNotes"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13067&page=Phase3+Step7]]></link>
+</links>
