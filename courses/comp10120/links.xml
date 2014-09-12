@@ -3,7 +3,7 @@
 
 -->
 <links>
-    <link name="EBLSurvey"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_31871_1&content_id=_3003789_1&mode=view]]></link>
+    <link name="EBLSurvey" window="new"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_31871_1&content_id=_3003789_1&mode=view]]></link>
     <link name="IndividualLearningProfile"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_31871_1&content_id=_2979392_1&mode=view]]></link>
     <link name="Lab1"><![CDATA[./Project_instructions/Lab1.html]]></link>
     <link name="Lab2"><![CDATA[./Project_instructions/Lab2.html]]></link>
