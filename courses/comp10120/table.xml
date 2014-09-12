@@ -79,7 +79,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 1: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase1+Step1]}">Welcome and Intellectual Property Investigation</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Phase1]}">Introductory labs 2-4</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[LabIntro]}">Introductory labs 2-4</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[
                 <a href="{L_[PersonalWiki]}">Personal test wiki</a><br />
