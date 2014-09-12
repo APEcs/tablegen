@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- Format information:
+
+-->
+<course>
+    <style>
+   table.schedule {
+     border: 1px black solid;
+     border-spacing: 0px;
+     border-collapse: collapse;
+   }
+   table.schedule td, table.schedule th {
+     border: 1px solid black;
+     font-family: arial, verdana, sans-serif;
+     font-size: 12px;
+     letter-spacing: 0;
+     line-height: 1.5em;
+     vertical-align: top;
+     padding: 2px;
+   }
+   table.schedule td a, table.schedule th a {
+     text-decoration: none;
+   }
+   table.schedule td a:hover, table.schedule th a:hover {
+     text-decoration: underline;
+   }
+   table.schedule tr.intro td {
+     background-color: #c0c0ff;
+   }
+   table.schedule tr.phase1 td {
+     background-color: #c0ffc0;
+   }
+   table.schedule tr.phase2 td {
+     background-color: #ffffc0;
+   }
+   table.schedule tr.phase3 td {
+     background-color: #ffe0c0;
+   }
+   table.schedule tr.phase4 td {
+     background-color: #ffc0c0;
+   }
+   table.schedule th {
+     font-weight: bold;
+     text-align: center;
+   }
+   table.schedule td.title {
+     text-align: center;
+     font-weight: bold;
+   }
+    </style>
+    <columns class="schedule">
+        <column id="week"  title="Wk" />
+        <column id="step"  title="Step" />
+        <column id="tut"   title="Tutorial" />
+        <column id="lab"   title="Lab" />
+        <column id="lec"   title="Lecture" />
+        <column id="other" title="Other" />
+    </columns>
+    <rows>
+
+      <!-- Introduction -->
+        <row semester="1" week="0" class="intro">
+            <data for="week" span="6" class="title"><![CDATA[Introduction (<a href="{L_[Phase0]}">phase overview</a>)]]></data>
+        </row>
+        <row semester="1" week="0" class="intro">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Registration {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut">Meet tutor for lunch on {T_[weekday+2]}</data>
+            <data for="lab"><![CDATA[<a href="{L_[Phase0]}">Intro labs</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Phase0]}">Intro talks</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[Phase0]}">Workshop</a>]]></data>
+        </row>
+
+      <!-- Phase 1 -->
+        <row semester="1" week="1" class="phase1">
+            <data for="week" span="6" class="title"><![CDATA[Phase 1: Professional Issues - Intellectual Property (<a href="{L_[Phase1]}">phase overview</a>)]]></data>
+        </row>
+        <row semester="1" week="1" class="phase1">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 1: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase1+Step1]}">Welcome and Intellectual Property Investigation</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[LabIntro]}">Introductory labs 2-4</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[
+                <a href="{L_[PersonalWiki]}">Personal test wiki</a><br />
+                <a href="{L_[ReflectiveJournal1.1]}">Reflective journal</a><br />
+                <a href="{L_[IndividualLearningProfile]}">Individual Learning Profile</a><br />
+                <a href="{L_[TutorNotes1.1]}">NOTES FOR TUTORS</a>
+            ]]></data>
+        </row>
+        <row semester="1" week="2" class="phase1">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 2: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase1+Step2]}">Intellectual Property report back and discussion</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab1]}">Academic Malpractice Awareness and Health and Safety</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[
+                <a href="{L_[ReflectiveJournal1.2]}">Reflective journal</a><br />
+                <a href="{L_[TutorNotes1.2]}">NOTES FOR TUTORS</a>
+            ]]></data>
+        </row>
+
+      <!-- Phase 2 -->
+        <row semester="1" week="3" class="phase2">
+            <data for="week" span="6" class="title"><![CDATA[Phase 2: Professional Issues - Ethics (<a href="{L_[Phase2]}">phase overview</a>)]]></data>
+        </row>
+        <row semester="1" week="3" class="phase2">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 1: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase2+Step1]}">The Case Study</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab2]}">Finding Information Online</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[
+                <a href="{L_[ReflectiveJournal1.3]}">Reflective journal</a><br />
+                <a href="{L_[TutorNotes2.1]}">NOTES FOR TUTORS</a>
+            ]]></data>
+        </row>
+        <row semester="1" week="4" class="phase2">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 2: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase2+Step2]}">Ethical Frameworks</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab3]}">Introduction to LaTeX</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[
+                <a href="{L_[ReflectiveJournal1.4]}">Reflective journal</a><br/>
+                <a href="{L_[ProgrammingExp]}">Programming experience questionnaire</a><br />
+                <a href="{L_[TutorNotes2.2]}">NOTES FOR TUTORS</a>
+            ]]></data>
+        </row>
+        <row semester="1" week="5" class="phase2">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 3: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase2+Step3]}">The Group's Ethical Framework</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab4]}">Keeping your files under control</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[
+                <a href="{L_[ReflectiveJournal1.5]}">Reflective journal</a><br />
+                <a href="{L_[TutorNotes2.3]}">NOTES FOR TUTORS</a>
+            ]]></data>
+        </row>
+        <row semester="1" week="6" class="phase2">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 4: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut" span="4"><![CDATA[Reading Week (no teaching) <a href="{L_[Phase2+Step4]}">Report</a>]]></data>
+        </row>
+
+      <!-- Phase 3 -->
+        <row semester="1" week="7" class="phase3">
+            <data for="week" span="6" class="title"><![CDATA[Phase 3: World Wide What? (<a href="{L_[Phase3]}">phase overview</a>)]]></data>
+        </row>
+        <row semester="1" week="7" class="phase3">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 1: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase3+Step1]}">Planning your Research</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab5]}">HTML, CSS</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[
+                <a href="{L_[ReflectiveJournal1.7]}">Reflective journal</a><br />
+                <a href="{L_[TutorNotes3.1]}">NOTES FOR TUTORS</a>
+            ]]></data>
+        </row>
+        <row semester="1" week="8" class="phase3">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 2: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase3+Step2]}">Research I</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab6]}">PHP, HTML forms</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[
+                <a href="{L_[ReflectiveJournal1.8]}">Reflective journal</a><br />
+                <a href="{L_[TutorNotes3.2]}">NOTES FOR TUTORS</a>
+            ]]></data>
+        </row>
+        <row semester="1" week="9" class="phase3">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 3: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase3+Step3]}">Research II</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab7]}">MySQL</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[
+                <a href="{L_[ReflectiveJournal1.9]}">Reflective journal</a><br />
+                <a href="{L_[EBLSurvey]}">Student Experience of EBL survey</a><br />
+                <a href="{L_[TutorNotes3.3]}">NOTES FOR TUTORS</a>
+            ]]></data>
+        </row>
+        <row semester="1" week="10" class="phase3">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 4: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase3+Step4]}">Preparing your Presentation</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab8]}">Group - Simple web-site</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[
+                <a href="{L_[ReflectiveJournal1.10]}">Reflective journal</a><br />
+                <a href="{L_[TutorNotes3.4]}">NOTES FOR TUTORS</a>
+            ]]></data>
+        </row>
+        <row semester="1" week="11" class="phase3">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 5: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase3+Step5]}">Presentations</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Phase3+Step5]}">Presentations</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Phase3+Step5]}">Poster session</a>]]></data>
+            <data for="other"><![CDATA[
+                <a href="{L_[ReflectiveJournal1.11]}">Reflective journal</a><br />
+                <a href="{L_[TutorNotes3.5]}">NOTES FOR TUTORS</a>
+            ]]></data>
+        </row>
+        <row semester="1" week="12" class="phase3">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 6: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase3+Step6]}">Review</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Labs]}">Catch-up</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[
+                <a href="{L_[ReflectiveJournal1.12]}">Reflective journal</a><br />
+                <a href="{L_[TutorNotes3.6]}">NOTES FOR TUTORS</a>
+            ]]></data>
+        </row>
+
+      <!-- XMas and exams -->
+        <row semester="1" break="xmas">
+            <data for="week" span="6" class="title"><![CDATA[{T_[breakname]} (<a href="{L_[ReflectiveNotes]}">Reflective notes</a>) {T_[breaksdaymon]} - {T_[breakedaymon]}]]></data>
+        </row>
+        <row semester="1" break="exams1">
+            <data for="week" span="6" class="title"><![CDATA[{T_[breakname]} {T_[breaksdaymon]} - {T_[breakedaymon]}]]></data>
+        </row>
+
+        <row semester="2" week="1" class="phase4">
+            <data for="week" span="6" class="title"><![CDATA[Phase 4: Building the application (<a href="{L_[Phase4]}">phase overview</a>)]]></data>
+        </row>
+        <row semester="2" week="1" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 1: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step1]}">Project planning</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+        </row>
+        <row semester="2" week="2" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 2: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step1]}">Project planning</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+        </row>
+        <row semester="2" week="3" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 3: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step1]}">Project planning</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+        </row>
+
+        <row semester="2" week="4" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 4: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step4]}">Monitoring Progress</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+        </row>
+        <row semester="2" week="5" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 5: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step4]}">Monitoring Progress</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+        </row>
+        <row semester="2" week="6" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 6: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step4]}">Monitoring Progress</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+        </row>
+        <row semester="2" week="7" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 7: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step4]}">Monitoring Progress</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+        </row>
+
+        <row semester="2" week="8" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 8: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step8]}">Freezing Development</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+        </row>
+
+        <row semester="2" week="9" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 9: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step9]}">Preparing your presentation</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+        </row>
+
+        <row semester="2" week="10" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 10: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step10]}">Presentations</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Phase4+Step10]}">Presentations</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+        </row>
+
+        <row semester="2" week="11" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 11: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step11]}">Review</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Project showcase</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[Phase4+Step11]}">Redistribution of Presentation Marks</a>]]></data>
+        </row>
+
+        <row semester="2" week="12" class="phase4">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 12: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step12]}">Report</a>]]></data>
+        </row>
+
+        <row semester="2" break="easter">
+            <data for="week" span="6" class="title"><![CDATA[{T_[breakname]} {T_[breaksdaymon]} - {T_[breakedaymon]}]]></data>
+        </row>
+        <row semester="2" break="exams2">
+            <data for="week" span="6" class="title"><![CDATA[{T_[breakname]} {T_[breaksdaymon]} - {T_[breakedaymon]}]]></data>
+        </row>
+
+<!--
+        <row semester="1" week="1" class="intro">
+            <data for="week">{T_[weeknum]}</data>
+            <data for="step">Step 1: {T_[weekdate]}-{T_[weekdate+4]}</data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase1+Step1]}"></a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Phase1]}"></a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[Phase+0]}"></a>]]></data>
+        </row>
+-->
+    </rows>
+</course>
