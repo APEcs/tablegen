@@ -3,55 +3,62 @@
 
 -->
 <links>
-    <link name="EBLSurvey" window="new"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_31871_1&content_id=_3003789_1&mode=view]]></link>
-    <link name="IndividualLearningProfile"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_31871_1&content_id=_2979392_1&mode=view]]></link>
-    <link name="Lab1"><![CDATA[./Project_instructions/Lab1.html]]></link>
-    <link name="Lab2"><![CDATA[./Project_instructions/Lab2.html]]></link>
-    <link name="Lab3"><![CDATA[./Project_instructions/Lab3.html]]></link>
-    <link name="Lab4"><![CDATA[./Project_instructions/Lab4.html]]></link>
-    <link name="Lab5"><![CDATA[./Project_instructions/Lab5.html]]></link>
-    <link name="Lab6"><![CDATA[./Project_instructions/Lab6.html]]></link>
-    <link name="Lab7"><![CDATA[./Project_instructions/Lab7.html]]></link>
-    <link name="Lab8"><![CDATA[./Project_instructions/Lab8.html]]></link>
-    <link name="Labs"><![CDATA[./Project_instructions/Labs.html]]></link>
-    <link name="Lectures"><![CDATA[./Project_instructions/Lectures.html]]></link>
-    <link name="PersonalWiki"><![CDATA[https://online.manchester.ac.uk/webapps/Bb-wiki-BBLEARN/viewWikiLink?course_id=_31871_1&content_id=_2979398_1]]></link>
-    <link name="Phase0"></link>
-    <link name="Phase+0"><![CDATA[./Project_instructions/Phase+0.html]]></link>
-    <link name="Phase1"><![CDATA[./Project_instructions/Phase+1.html]]></link>
-    <link name="Phase1+Step1"><![CDATA[./Project_instructions/Phase1+Step1.html]]></link>
-    <link name="Phase1+Step2"><![CDATA[./Project_instructions/Phase1+Step2.html]]></link>
-    <link name="Phase2"><![CDATA[./Project_instructions/Phase+2.html]]></link>
-    <link name="Phase2+Step1"><![CDATA[./Project_instructions/Phase2+Step1.html]]></link>
-    <link name="Phase2+Step2"><![CDATA[./Project_instructions/Phase2+Step2.html]]></link>
-    <link name="Phase2+Step3"><![CDATA[./Project_instructions/Phase2+Step3.html]]></link>
-    <link name="Phase2+Step4"><![CDATA[./Project_instructions/Phase2+Step4.html]]></link>
-    <link name="Phase3"><![CDATA[./Project_instructions/Phase+3.html]]></link>
-    <link name="Phase3+Step1"><![CDATA[./Project_instructions/Phase3+Step1.html]]></link>
-    <link name="Phase3+Step2"><![CDATA[./Project_instructions/Phase3+Step2.html]]></link>
-    <link name="Phase3+Step3"><![CDATA[./Project_instructions/Phase3+Step3.html]]></link>
-    <link name="Phase3+Step4"><![CDATA[./Project_instructions/Phase3+Step4.html]]></link>
-    <link name="Phase3+Step5"><![CDATA[./Project_instructions/Phase3+Step5.html]]></link>
-    <link name="Phase3+Step6"><![CDATA[./Project_instructions/Phase3+Step6.html]]></link>
-    <link name="Phase4"><![CDATA[./Project_instructions/Phase+4.html]]></link>
-    <link name="Phase4+Step1"><![CDATA[./Project_instructions/Phase4+Step1.html]]></link>
-    <link name="Phase4+Step10"><![CDATA[./Project_instructions/Phase4+Step10.html]]></link>
-    <link name="Phase4+Step11"><![CDATA[./Project_instructions/Phase4+Step11.html]]></link>
-    <link name="Phase4+Step12"><![CDATA[./Project_instructions/Phase4+Step12.html]]></link>
-    <link name="Phase4+Step4"><![CDATA[./Project_instructions/Phase4+Step4.html]]></link>
-    <link name="Phase4+Step8"><![CDATA[./Project_instructions/Phase4+Step8.html]]></link>
-    <link name="Phase4+Step9"><![CDATA[./Project_instructions/Phase4+Step9.html]]></link>
-    <link name="ProgrammingExp"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_31871_1&content_id=_2994214_1&mode=view]]></link>
-    <link name="ReflectiveJournal1.1"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_31871_1&content_id=_2973560_1&mode=view]]></link>
-    <link name="ReflectiveJournal1.10"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_31871_1&content_id=_3004127_1&mode=view]]></link>
-    <link name="ReflectiveJournal1.11"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_31871_1&content_id=_3004125_1&mode=view]]></link>
-    <link name="ReflectiveJournal1.12"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_31871_1&content_id=_3004128_1&mode=view]]></link>
-    <link name="ReflectiveJournal1.2"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_31871_1&content_id=_2993531_1&mode=view]]></link>
-    <link name="ReflectiveJournal1.3"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_31871_1&content_id=_2993539_1&mode=view]]></link>
-    <link name="ReflectiveJournal1.4"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_31871_1&content_id=_2993999_1&mode=view]]></link>
-    <link name="ReflectiveJournal1.5"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_31871_1&content_id=_3004118_1&mode=view]]></link>
-    <link name="ReflectiveJournal1.7"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_31871_1&content_id=_3004119_1&mode=view]]></link>
-    <link name="ReflectiveJournal1.8"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_31871_1&content_id=_3004122_1&mode=view]]></link>
-    <link name="ReflectiveJournal1.9"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_31871_1&content_id=_3004124_1&mode=view]]></link>
+    <link name="EBLSurvey" window="new"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_37372_1&content_id=_3734110_1]]></link>
+    <link name="IndividualLearningProfile"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_37372_1&content_id=_3734106_1]]></link>
+
+    <link name="Lab1"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Lab1.html]]></link>
+    <link name="Lab2"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Lab2.html]]></link>
+    <link name="Lab3"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Lab3.html]]></link>
+    <link name="Lab4"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Lab4.html]]></link>
+    <link name="Lab5"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Lab5.html]]></link>
+    <link name="Lab6"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Lab6.html]]></link>
+    <link name="Lab7"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Lab7.html]]></link>
+    <link name="Lab8"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Lab8.html]]></link>
+    <link name="Labs"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Labs.html]]></link>
+
+    <link name="Lectures"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/pid-4483549-dt-content-rid-14231203_1/xid-14231203_1]]></link>
+
+    <link name="PersonalWiki"><![CDATA[https://online.manchester.ac.uk/webapps/Bb-wiki-BBLEARN/viewWikiLink?course_id=_37372_1&content_id=_3734114_1]]></link>
+
+    <link name="Phase0">https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase+0.html</link>
+    <link name="Phase+0"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase+0.html]]></link>
+    <link name="Phase1"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase+1.html]]></link>
+    <link name="Phase1+Step1"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase1+Step1.html]]></link>
+    <link name="Phase1+Step2"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase1+Step2.html]]></link>
+    <link name="Phase2"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase+2.html]]></link>
+    <link name="Phase2+Step1"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase2+Step1.html]]></link>
+    <link name="Phase2+Step2"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase2+Step2.html]]></link>
+    <link name="Phase2+Step3"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase2+Step3.html]]></link>
+    <link name="Phase2+Step4"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase2+Step4.html]]></link>
+    <link name="Phase3"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase+3.html]]></link>
+    <link name="Phase3+Step1"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase3+Step1.html]]></link>
+    <link name="Phase3+Step2"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase3+Step2.html]]></link>
+    <link name="Phase3+Step3"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase3+Step3.html]]></link>
+    <link name="Phase3+Step4"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase3+Step4.html]]></link>
+    <link name="Phase3+Step5"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase3+Step5.html]]></link>
+    <link name="Phase3+Step6"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase3+Step6.html]]></link>
+    <link name="Phase4"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase+4.html]]></link>
+    <link name="Phase4+Step1"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase4+Step1.html]]></link>
+    <link name="Phase4+Step10"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase4+Step10.html]]></link>
+    <link name="Phase4+Step11"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase4+Step11.html]]></link>
+    <link name="Phase4+Step12"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase4+Step12.html]]></link>
+    <link name="Phase4+Step4"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase4+Step4.html]]></link>
+    <link name="Phase4+Step8"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase4+Step8.html]]></link>
+    <link name="Phase4+Step9"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1161-1YR-020952/Project_instructions/Phase4+Step9.html]]></link>
+
+    <link name="ProgrammingExp"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_37372_1&content_id=_3734107_1]]></link>
+
+    <link name="ReflectiveJournal1.1"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_37372_1&content_id=_3940984_1]]></link>
+    <link name="ReflectiveJournal1.2"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_37372_1&content_id=_3940992_1]]></link>
+    <link name="ReflectiveJournal1.3"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_37372_1&content_id=_3940993_1]]></link>
+    <link name="ReflectiveJournal1.4"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_37372_1&content_id=_3940995_1]]></link>
+    <link name="ReflectiveJournal1.5"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_37372_1&content_id=_3940996_1]]></link>
+    <link name="ReflectiveJournal1.7"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_37372_1&content_id=_3940999_1]]></link>
+    <link name="ReflectiveJournal1.8"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_37372_1&content_id=_3940997_1]]></link>
+    <link name="ReflectiveJournal1.9"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_37372_1&content_id=_3941000_1]]></link>
+    <link name="ReflectiveJournal1.10"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_37372_1&content_id=_3940989_1]]></link>
+    <link name="ReflectiveJournal1.11"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_37372_1&content_id=_3940990_1]]></link>
+    <link name="ReflectiveJournal1.12"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchLink.jsp?course_id=_37372_1&content_id=_3940991_1]]></link>
+
     <link name="ReflectiveNotes"></link>
 </links>
