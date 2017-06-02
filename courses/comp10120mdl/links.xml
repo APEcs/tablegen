@@ -3,10 +3,10 @@
 
 -->
 <links>
-    <link name="EBLSurvey" window="new"><![CDATA[https://moodle.cs.man.ac.uk/mod/quiz/view.php?id=13133]]></link>
-    <link name="IndividualLearningProfile"><![CDATA[https://moodle.cs.man.ac.uk/mod/quiz/view.php?id=13101]]></link>
+    <link name="EBLSurvey" window="new"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_37372_1&content_id=_3734110_1&mode=cpview]]></link>
+    <link name="IndividualLearningProfile"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_37372_1&content_id=_3734106_1&mode=cpview]]></link>
     <link name="PersonalWiki"><![CDATA[https://moodle.cs.man.ac.uk/mod/wiki/view.php?id=13099]]></link>
-    <link name="ProgrammingExp"><![CDATA[https://moodle.cs.man.ac.uk/mod/quiz/view.php?id=13118]]></link>
+    <link name="ProgrammingExp"><![CDATA[https://online.manchester.ac.uk/webapps/blackboard/content/launchAssessment.jsp?course_id=_37372_1&content_id=_3734107_1&mode=cpview]]></link>
     <link name="ReflectiveJournal1.1"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13100]]></link>
     <link name="ReflectiveJournal1.2"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13108]]></link>
     <link name="ReflectiveJournal1.3"><![CDATA[https://moodle.cs.man.ac.uk/mod/journal/view.php?id=13112]]></link>
