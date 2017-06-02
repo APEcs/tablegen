@@ -103,4 +103,14 @@ Sunday, the loader code will need to undo the changes it makes.
         </semester>
     </year>
 
+    <year id="AY1718">
+        <semester id="1" start="2017-09-18" end="2018-01-28">
+            <break id="xmas" name="Christmas" start="2017-12-15" end="2018-01-15" />
+            <break id="exams1" name="Semester 1 exams" start="2018-01-14" end="2018-01-27" />
+        </semester>
+        <semester id="2" start="2018-01-29" end="2018-06-08">
+            <break id="easter" name="Easter" start="2018-03-23" end="2017-04-16" />
+            <break id="exams2" name="Semester 2 exams" start="2018-05-13" end="2018-06-09" />
+        </semester>
+    </year>
 </years>
