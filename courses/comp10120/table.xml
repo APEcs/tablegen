@@ -66,7 +66,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Registration {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut">Meet tutor for lunch on {T_[weekday+2]}</data>
-            <data for="lab"><![CDATA[<a href="{L_[Phase0]}">Welcome Lab, Intro Lab 1</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[LabIntro]}">Welcome Lab, Intro Lab 1</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Phase0]}">Intro talks</a>]]></data>
             <data for="other"><![CDATA[<a href="{L_[Phase0]}">Workshop</a>]]></data>
         </row>
@@ -79,7 +79,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 1: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase1+Step1]}">Welcome and Intellectual Property Investigation</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[LabIntro]}">Intro Lab 2-4</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab1]}">Intro Lab 2-4</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[
                 <a href="{L_[ReflectiveJournal]}">Reflective journal</a><br />
@@ -89,7 +89,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 2: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase1+Step2]}">Intellectual Property report back and discussion</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Lab1]}">Academic Malpractice Awareness and Health and Safety</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab2]}">Academic Malpractice Awareness and Health and Safety</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
@@ -102,7 +102,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 1: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase2+Step1]}">The Case Study</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Lab2]}">Finding Information Online</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab3]}">Finding Information Online</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
@@ -110,7 +110,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 2: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase2+Step2]}">Ethical Frameworks</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Lab3]}">Report writing and Digital Typography</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab4]}">Report writing and Digital Typography</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[
                 <a href="{L_[ReflectiveJournal]}">Reflective journal</a><br/>
@@ -120,7 +120,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 3: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase2+Step3]}">The Group's Ethical Framework</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Lab4]}">Version Control</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab5]}">Version Control</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
@@ -128,6 +128,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 4: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut" span="4"><![CDATA[Reading Week (no teaching) <a href="{L_[Phase2+Step4]}">Report</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab6]}">Reading Week</a>]]></data>
         </row>
 
       <!-- Phase 3 -->
@@ -138,7 +139,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 1: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase3+Step1]}">Planning your Research</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Lab5]}">HTML, CSS</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab7]}">HTML and CSS</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
@@ -146,7 +147,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 2: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase3+Step2]}">Research I</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Lab6]}">PHP, HTML forms</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab8]}">PHP and HTML forms</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
@@ -154,7 +155,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 3: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase3+Step3]}">Research II</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Lab7]}">Linking with MySQL</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab9]}">Linking with MySQL</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[
                 <a href="{L_[ReflectiveJournal]}">Reflective journal</a><br />
@@ -164,7 +165,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 4: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase3+Step4]}">Preparing your Presentation</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Lab8]}">Group Website</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab10]}">Your First Team's Web Site</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
@@ -172,7 +173,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 5: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase3+Step5]}">Presentations</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Phase3+Step5]}">Presentations</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab11]}">Presentations</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Phase3+Step5]}">Poster session</a>]]></data>
             <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
@@ -180,7 +181,7 @@
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 6: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase3+Step6]}">Review</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Labs]}">Catch-up</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Lab12]}">Catch-up</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
@@ -202,6 +203,7 @@
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step1]}">Project planning</a>]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
         <row semester="2" week="2" class="phase4">
             <data for="week">{T_[weeknum]}</data>
@@ -209,6 +211,7 @@
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step1]}">Project planning</a>]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
         <row semester="2" week="3" class="phase4">
             <data for="week">{T_[weeknum]}</data>
@@ -216,6 +219,7 @@
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step3]}">Project planning</a>]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
 
         <row semester="2" week="4" class="phase4">
@@ -224,6 +228,7 @@
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step4]}">Monitoring Progress</a>]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
         <row semester="2" week="5" class="phase4">
             <data for="week">{T_[weeknum]}</data>
@@ -231,6 +236,7 @@
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step4]}">Monitoring Progress</a>]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
         <row semester="2" week="6" class="phase4">
             <data for="week">{T_[weeknum]}</data>
@@ -238,6 +244,7 @@
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step4]}">Monitoring Progress</a>]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
         <row semester="2" week="7" class="phase4">
             <data for="week">{T_[weeknum]}</data>
@@ -245,6 +252,7 @@
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step7]}">Monitoring Progress</a>]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
 
         <row semester="2" week="8" class="phase4">
@@ -253,13 +261,16 @@
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step8]}">Freezing Development</a>]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
 
         <row semester="2" week="9" class="phase4">
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 9: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step9]}">Preparing your presentation</a>]]></data>
+            <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
 
         <row semester="2" week="10" class="phase4">
@@ -268,19 +279,22 @@
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step10]}">Presentations</a>]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Phase4+Step10]}">Presentations</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
 
         <row semester="2" week="11" class="phase4">
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 11: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step11]}">Review</a>]]></data>
-            <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Project showcase</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Showcase]}">Project showcase</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
 
         <row semester="2" week="12" class="phase4">
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 12: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step12]}">Report</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
         </row>
 
         <row semester="2" break="easter">
