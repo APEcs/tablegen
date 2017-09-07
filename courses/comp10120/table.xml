@@ -83,7 +83,6 @@
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[
                 <a href="{L_[ReflectiveJournal]}">Reflective journal</a><br />
-                <a href="{L_[IndividualLearningProfile]}">Individual Learning Profile</a>
             ]]></data>
         </row>
         <row semester="1" week="2" class="phase1">
@@ -115,7 +114,6 @@
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[
                 <a href="{L_[ReflectiveJournal]}">Reflective journal</a><br/>
-                <a href="{L_[ProgrammingExp]}">Programming experience questionnaire</a><br/>
             ]]></data>
         </row>
         <row semester="1" week="5" class="phase2">
@@ -160,7 +158,6 @@
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[
                 <a href="{L_[ReflectiveJournal]}">Reflective journal</a><br />
-                <a href="{L_[EBLSurvey]}">Student Experience of EBL survey</a>
             ]]></data>
         </row>
         <row semester="1" week="10" class="phase3">
@@ -216,7 +213,7 @@
         <row semester="2" week="3" class="phase4">
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 3: {T_[weekdate]}-{T_[weekdate+4]}</data>
-            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step1]}">Project planning</a>]]></data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step3]}">Project planning</a>]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
         </row>
@@ -245,7 +242,7 @@
         <row semester="2" week="7" class="phase4">
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 7: {T_[weekdate]}-{T_[weekdate+4]}</data>
-            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step4]}">Monitoring Progress</a>]]></data>
+            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step7]}">Monitoring Progress</a>]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
         </row>
@@ -278,7 +275,6 @@
             <data for="step">Step 11: {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut"><![CDATA[<a href="{L_[Phase4+Step11]}">Review</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Project showcase</a>]]></data>
-            <data for="other"><![CDATA[<a href="{L_[Phase4+Step11]}">Redistribution of Presentation Marks</a>]]></data>
         </row>
 
         <row semester="2" week="12" class="phase4">
