@@ -67,8 +67,8 @@
             <data for="step">Registration {T_[weekdate]}-{T_[weekdate+4]}</data>
             <data for="tut">Meet tutor for lunch on {T_[weekday+2]}</data>
             <data for="lab"><![CDATA[<a href="{L_[LabIntro]}">Welcome Lab, Intro Lab 1</a>]]></data>
-            <data for="lec"><![CDATA[<a href="{L_[Phase0]}">Intro talks</a>]]></data>
-            <data for="other"><![CDATA[<a href="{L_[Phase0]}">Workshop</a>]]></data>
+            <data for="lec"><![CDATA[<a href="{L_[Timetable]}">Intro talks</a>]]></data>
+            <data for="other"><![CDATA[<a href="{L_[LabIntro]}">Workshop</a>]]></data>
         </row>
 
       <!-- Phase 1 -->
@@ -127,8 +127,8 @@
         <row semester="1" week="6" class="phase2">
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 4: {T_[weekdate]}-{T_[weekdate+4]}</data>
-            <data for="tut" span="4"><![CDATA[Reading Week (no teaching) <a href="{L_[Phase2+Step4]}">Report</a>]]></data>
-            <data for="lab"><![CDATA[<a href="{L_[Lab6]}">Reading Week</a>]]></data>
+            <data for="tut"><![CDATA[Reading Week (no teaching) <a href="{L_[Phase2+Step4]}">Report</a>]]></data>
+            <data for="lab" span="3"><![CDATA[<a href="{L_[Lab6]}">Reading Week</a>]]></data>
         </row>
 
       <!-- Phase 3 -->

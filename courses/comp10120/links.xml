@@ -2,11 +2,13 @@
 <!-- Format information:
 -->
 <links>
-<!-- the 2017 base
+<!-- The 2017 base
 https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1171-1YR-020952/Project_instructions/Tutorials.html
 https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1171-1YR-020952/Project_instructions/Labs.html
 https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1171-1YR-020952/Project_instructions/CourseMechanics.html
 -->
+   <link name="Timetable"><![CDATA[http://studentnet.cs.manchester.ac.uk/ugt/year1/docs/WWTimetable.pdf]]></link>
+
    <link name="Labs"    ><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1171-1YR-020952/Project_instructions/Labs.html]]></link>
    <link name="LabIntro"><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1171-1YR-020952/Project_instructions/Labs.html#WeWiLabs]]></link>
    <link name="Lab1"    ><![CDATA[https://online.manchester.ac.uk/bbcswebdav/courses/I3023-COMP-10120-1171-1YR-020952/Project_instructions/Labs.html#W1Labs]]></link>
