@@ -154,7 +154,10 @@
         <row semester="1" week="9" class="phase3">
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 3: {T_[weekdate]}-{T_[weekdate+4]}</data>
-            <data for="tut"><![CDATA[<a href="{L_[Phase3+Step3]}">Research II</a>]]></data>
+            <data for="tut"><![CDATA[
+                <a href="{L_[Phase3+Step3]}">Research II</a><br />
+                <a href="{L_[HealthCheck]}">Team Health Check</a>
+            ]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Lab9]}">Linking with MySQL</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[
@@ -216,7 +219,10 @@
         <row semester="2" week="3" class="phase4">
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 3: {T_[weekdate]}-{T_[weekdate+4]}</data>
-            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step3]}">Project planning</a>]]></data>
+            <data for="tut"><![CDATA[
+                <a href="{L_[Phase4+Step3]}">Project planning</a><br />
+                <a href="{L_[HealthCheck]}">Team Health Check</a>
+            ]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
@@ -249,7 +255,10 @@
         <row semester="2" week="7" class="phase4">
             <data for="week">{T_[weeknum]}</data>
             <data for="step">Step 7: {T_[weekdate]}-{T_[weekdate+4]}</data>
-            <data for="tut"><![CDATA[<a href="{L_[Phase4+Step7]}">Monitoring Progress</a>]]></data>
+            <data for="tut"><![CDATA[
+                <a href="{L_[Phase4+Step7]}">Monitoring Progress</a><br />
+                <a href="{L_[HealthCheck]}">Team Health Check</a>
+            ]]></data>
             <data for="lab"><![CDATA[<a href="{L_[Labs]}">Clinic</a>]]></data>
             <data for="lec"><![CDATA[<a href="{L_[Lectures]}">Lecture</a>]]></data>
             <data for="other"><![CDATA[<a href="{L_[ReflectiveJournal]}">Reflective journal</a>]]></data>
